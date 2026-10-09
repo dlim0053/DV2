@@ -1,0 +1,27 @@
+eaaf_code,site_name,region,lat,lon,coord_source,note,role
+EAAF112,Bako Buntal Bay,MY-Sarawak,1.4,110.3,EAAFP Malaysia page (eaaflyway.net/?p=31760),ok,origin
+EAAF132,Ashmore Reef Commonwealth Marine Reserve,AU-External,-12.2,123.0,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF131,Adelaide International Bird Sanctuary,AU-SA,-34.181568,138.086077,EAAFP Australia page (eaaflyway.net/?p=68454),check: point sits at northern end of the 60 km sanctuary (near Port Wakefield); fine at national scale,destination
+EAAF125,South-East Gulf of Carpentaria: Nijinda Durlga (Tarrant),AU-QLD,-17.49,139.59,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF136,Pulu Keeling National Park,AU-External,-11.833,96.817,Ramsar RSIS via Wikipedia list (RS797),EAAFP page lists Gulf of Carpentaria coordinates under this name (rows appear shifted); Ramsar value used,destination
+EAAF111,Roebuck Bay,AU-WA,-17.980249,122.228447,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF110,Eighty-Mile Beach,AU-WA,-19.02,121.48,EAAFP Australia page (eaaflyway.net/?p=68454),"ok (EAAFP site is larger than the Ramsar site, so differs from Ramsar centroid)",destination
+EAAF017,Forrestdale and Thomsons Lakes,AU-WA,-32.15,115.86667,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF011,Kakadu National Park,AU-NT,-12.28,132.46,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF015,Ord River Floodplain (listed in your file as Parry Lagoons),AU-WA,-15.55,128.25,EAAFP Australia page (eaaflyway.net/?p=68454),EAAFP names EAAF015 Ord River Floodplain; Parry Lagoons is a nature reserve within it,destination
+EAAF120,South East Gulf of Carpentaria: Karumba Smithburne (Delta Downs),AU-QLD,-17.24,140.91,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF089,Bowling Green Bay,AU-QLD,-19.31667,147.40833,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF094,Shoalwater Bay,AU-QLD,-22.667,150.283,Ramsar RSIS via Wikipedia list (RS792),EAAFP page lists Shallow Inlet (Victoria) coordinates here; Ramsar value used,destination
+EAAF090,Currawinya National Park,AU-QLD,-28.75,144.317,Ramsar RSIS via Wikipedia list (RS791),EAAFP page gives -25.83 which conflicts with the Ramsar record; Ramsar value used,destination
+EAAF092,Great Sandy Strait,AU-QLD,-25.5,152.9,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF013,Moreton Bay,AU-QLD,-27.25,153.3333,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF010,Hunter Estuary Ramsar Site,AU-NSW,-32.84,151.7833,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF012,Logan Lagoon,AU-TAS,-40.1667,148.2833,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF014,Orielton Lagoon,AU-TAS,-42.78333,147.5,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF009,Corner Inlet,AU-VIC,-38.7333,146.2167,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF093,Shallow Inlet Marine and Coastal Park,AU-VIC,-38.83333,146.16667,EAAFP Australia page (eaaflyway.net/?p=68454),"ok (Wikipedia gives -38.808, 146.149)",destination
+EAAF066,Western Port,AU-VIC,-38.367,145.283,Ramsar RSIS via Wikipedia list (RS267),EAAFP page duplicates Port Phillip coordinates; Ramsar value used,destination
+EAAF091,Discovery Bay Coastal Park,AU-VIC,-38.21667,141.28333,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF016,"The Coorong, Lake Alexandrina & Lake Albert",AU-SA,-35.74,139.22,EAAFP Australia page (eaaflyway.net/?p=68454),ok,destination
+EAAF065,Port Phillip Bay (Western Shoreline) and Bellarine Peninsula,AU-VIC,-38.0024,144.597,EAAFP Australia page (eaaflyway.net/?p=68454),ID is EAAF065 on the EAAFP page; your file shows EAAF094 (duplicate of Shoalwater),destination
+EAAF149,South-East Gulf of Carpentaria: Leichhardt River to Gore Point (Wernadinga coast),AU-QLD,-17.609,139.8824,EAAFP Australia page (eaaflyway.net/?p=68454),INFERRED: this coordinate block sits under the Pulu Keeling label on the EAAFP page; matches the 2020 joining date and Gulf location. Verify on the EAAFP site card,destination

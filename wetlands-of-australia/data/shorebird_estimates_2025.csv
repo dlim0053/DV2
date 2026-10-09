@@ -1,0 +1,38 @@
+common_name,pop_low,pop_high,one_pct_threshold,point_one_pct_threshold,threatened_status,threatened_listed,pop_note
+Asian Dowitcher,28000,28000,280,28,Vulnerable,True,
+Bar-tailed Godwit,375000,375000,3750,375,Endangered,True,
+Black-tailed Godwit,230000,230000,2300,230,Endangered,True,
+Broad-billed Sandpiper,45000,45000,450,45,Not on list,False,
+Common Greenshank,110000,110000,1100,110,Endangered,True,
+Common Redshank,100000,150000,1000,100,Not on list,False,range in source; low and high given
+Common Sandpiper,190000,190000,1900,190,Not on list,False,
+Curlew Sandpiper,120000,120000,1200,120,Critically Endangered,True,
+Double-banded Plover,25000,25000,250,25,Not on list,False,
+Far Eastern Curlew,35000,35000,350,35,Critically Endangered,True,
+Great Knot,400000,400000,4000,400,Vulnerable,True,
+Greater Sand Plover,140000,300000,1400,140,Vulnerable,True,range in source; low and high given
+Grey Plover,75000,75000,750,75,Vulnerable,True,
+Grey-tailed Tattler,80000,80000,800,80,Not on list,False,
+Latham's Snipe,35000,35000,350,35,Vulnerable,True,
+Lesser Sand Plover,275000,350000,2750,275,Endangered,True,range in source; low and high given
+Little Curlew,110000,110000,1100,110,Not on list,False,
+Little Ringed Plover,150000,150000,1500,150,Not on list,False,
+Long-toed Stint,230000,230000,2300,230,Not on list,False,
+Marsh Sandpiper,130000,130000,1300,130,Not on list,False,
+Oriental Plover,230000,230000,2300,230,Not on list,False,
+Oriental Pratincole,2880000,2880000,28800,2880,Not on list,False,
+Pacific Golden Plover,150000,150000,1500,150,Not on list,False,
+Pectoral Sandpiper,1220000,1930000,12200,1220,Not on list,False,range in source; low and high given
+Pin-tailed Snipe,170000,170000,1700,170,Not on list,False,
+Red Knot,130000,130000,1300,130,Vulnerable,True,
+Red-necked Phalarope,250000,250000,2500,250,Not on list,False,
+Red-necked Stint,600000,600000,6000,600,Not on list,False,
+Ruddy Turnstone,30000,30000,300,30,Vulnerable,True,
+Ruff,500,1000,5,1,Not on list,False,range in source; low and high given
+Sanderling,30000,30000,300,30,Not on list,False,
+Sharp-tailed Sandpiper,130000,130000,1300,130,Vulnerable,True,
+Swinhoe's Snipe,40000,40000,400,40,Not on list,False,
+Terek Sandpiper,75000,75000,750,75,Vulnerable,True,
+Wandering Tattler,10000,25000,100,10,Not on list,False,range in source; low and high given
+Whimbrel,90000,90000,900,90,Not on list,False,
+Wood Sandpiper,130000,130000,1300,130,Not on list,False,

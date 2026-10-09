@@ -1,0 +1,33 @@
+src,tgt,src_name,tgt_name,sites,sx,sy,tx,ty,w,state
+0:NT,1:Before 1990,Northern Territory,Before 1990,2,139,39.6,315,59.6,11.2,NT
+0:TAS,1:Before 1990,Tasmania,Before 1990,10,139,81.3,315,93.3,56.1,TAS
+0:VIC,1:Before 1990,Victoria,Before 1990,10,139,145.4,315,149.4,56.1,VIC
+0:VIC,1:2000s,Victoria,2000s,1,139,176.3,315,364.6,5.6,VIC
+0:VIC,1:2010 onwards,Victoria,2010 onwards,1,139,181.9,315,440.0,5.6,VIC
+0:SA,1:Before 1990,South Australia,Before 1990,4,139,203.9,315,188.7,22.4,SA
+0:SA,1:2000s,South Australia,2000s,1,139,217.9,315,370.2,5.6,SA
+0:SA,1:2010 onwards,South Australia,2010 onwards,1,139,223.6,315,445.6,5.6,SA
+0:ACT,1:1990s,Australian Capital Territory,1990s,1,139,237.2,315,227.6,5.6,ACT
+0:QLD,1:1990s,Queensland,1990s,5,139,262.0,315,244.4,28.1,QLD
+0:NSW,1:Before 1990,New South Wales,Before 1990,3,139,292.4,315,208.3,16.8,NSW
+0:NSW,1:1990s,New South Wales,1990s,6,139,317.7,315,275.3,33.7,NSW
+0:NSW,1:2000s,New South Wales,2000s,3,139,343.0,315,381.5,16.8,NSW
+0:NSW,1:2010 onwards,New South Wales,2010 onwards,1,139,354.2,315,451.2,5.6,NSW
+0:WA,1:1990s,Western Australia,1990s,9,139,390.2,315,317.3,50.5,WA
+0:WA,1:2000s,Western Australia,2000s,3,139,423.9,315,398.3,16.8,WA
+0:EXT,1:1990s,External territories,1990s,2,139,445.9,315,348.2,11.2,EXT
+0:EXT,1:2000s,External territories,2000s,4,139,462.8,315,417.9,22.4,EXT
+1:Before 1990,"2:Under 1,000 ha",Before 1990,"Under 1,000 ha",6,395,70.8,575,70.8,33.7,none
+1:Before 1990,"2:1,000 to 10,000 ha",Before 1990,"1,000 to 10,000 ha",10,395,115.7,575,196.7,56.1,none
+1:Before 1990,"2:10,000 to 100,000 ha",Before 1990,"10,000 to 100,000 ha",9,395,169.0,575,291.7,50.5,none
+1:Before 1990,"2:Over 100,000 ha",Before 1990,"Over 100,000 ha",4,395,205.5,575,392.3,22.4,none
+1:1990s,"2:Under 1,000 ha",1990s,"Under 1,000 ha",8,395,247.2,575,110.1,44.9,none
+1:1990s,"2:1,000 to 10,000 ha",1990s,"1,000 to 10,000 ha",4,395,280.9,575,236.0,22.4,none
+1:1990s,"2:10,000 to 100,000 ha",1990s,"10,000 to 100,000 ha",5,395,306.1,575,331.0,28.1,none
+1:1990s,"2:Over 100,000 ha",1990s,"Over 100,000 ha",6,395,337.0,575,420.3,33.7,none
+1:2000s,"2:Under 1,000 ha",2000s,"Under 1,000 ha",4,395,373.0,575,143.8,22.4,none
+1:2000s,"2:1,000 to 10,000 ha",2000s,"1,000 to 10,000 ha",2,395,389.9,575,252.8,11.2,none
+1:2000s,"2:10,000 to 100,000 ha",2000s,"10,000 to 100,000 ha",3,395,403.9,575,353.4,16.8,none
+1:2000s,"2:Over 100,000 ha",2000s,"Over 100,000 ha",3,395,420.7,575,445.6,16.8,none
+1:2010 onwards,"2:Under 1,000 ha",2010 onwards,"Under 1,000 ha",1,395,440.0,575,157.8,5.6,none
+1:2010 onwards,"2:10,000 to 100,000 ha",2010 onwards,"10,000 to 100,000 ha",2,395,448.4,575,367.4,11.2,none

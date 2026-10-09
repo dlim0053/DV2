@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Australia's wetlands and the birds that link them to Malaysia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600&family=Young+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+</head>
+<body>
+<header class="hero">
+  <h1>Australia's wetlands, and the birds that connect them to Malaysia</h1>
+  <p class="intro">Wetlands clean water, soak up floods and shelter wildlife. Australia protects its most important ones under an international treaty, and some of the birds that depend on them stop over on Malaysian shores along the way.</p>
+  <p class="byline">Lim Ding Jian &middot; FIT3179 Data Visualisation 2 &middot; 8 October 2026</p>
+</header>
+<main>
+  <section id="where">
+    <div class="text">
+      <h2>Where Australia protects its land</h2>
+      <p>A Ramsar site is a wetland listed under a global treaty because it matters internationally. Australia has 67. Protection is wider than that list, though. This map shows the share of each state's land inside any protected area, such as national parks, reserves and Indigenous Protected Areas.</p>
+      <p>Tasmania protects 42.8% of its land and the ACT 55.9%. Queensland and New South Wales protect about 9% and 10%.</p>
+    </div>
+    <figure>
+      <div id="choropleth" class="vis"></div>
+      <figcaption><b>Why a choropleth?</b> Colour gives one number per state at a glance. The ACT is too small to label on the map. The figures cover all protected land, not wetlands alone.</figcaption>
+    </figure>
+  </section>
+
+  <section id="types">
+    <div class="text">
+      <h2>What kinds of wetland there are</h2>
+      <p>Start with the boxes. Each box is one wetland type and its size shows how often it appears in the Directory. The biggest are seasonal freshwater ponds and marshes (180), seasonal freshwater lakes (162) and freshwater swamp forest (155).</p>
+      <p>The rings of the second chart show how wetland types are made up. The inner ring is each state, the middle ring is the kind of wetland (coastal and marine, inland or human-made) and the outer ring is the individual type. About 57% of records are inland, 40% coastal and marine and 3% human-made. Queensland has the most records, followed by New South Wales.</p>
+      <p>A wetland is not one thing. The Directory of Important Wetlands sorts Australia's 851 nationally important wetlands into 40 types, from coral reefs and mangroves to inland lakes and farm dams. Darker squares mean more sites with that type in that state.</p>
+      <p>Tasmania stands out for coastal freshwater lagoons and marshes, found at 20 of its 89 sites.</p>
+    </div>
+    <div class="figs">
+    <figure>
+      <div id="treemap" class="vis"></div>
+      <figcaption><b>Why a treemap?</b> With 40 types, a bar chart would be long. Boxes pack every type into one space, and grouping them by colour shows which kind of wetland dominates. Two human-made types are pooled because the source is inconsistent about which code is which.</figcaption>
+    </figure>
+    <figure>
+      <div id="sunburst" class="vis"></div>
+      <figcaption><b>Why a sunburst?</b> It shows a hierarchy and shares at once: how the total splits by state, then by kind of wetland, then by type. A wetland with several types is counted once for each, so slices show make-up, not numbers of wetlands. The next chart answers a different question: which specific types each state has.</figcaption>
+    </figure>
+    <figure>
+      <div id="heatmap" class="vis"></div>
+      <figcaption><b>Why a matrix heatmap?</b> It compares two things at once, state and wetland type, without 360 separate bars. A site with several types is counted once for each, so columns do not add up to the number of sites. The Directory was last published in 2001, so the counts are old but are still the latest national list. NSW is New South Wales, VIC Victoria, QLD Queensland, SA South Australia, WA Western Australia, TAS Tasmania, NT Northern Territory, ACT Australian Capital Territory and EXT external territories.</figcaption>
+    </figure>
+    </div>
+  </section>
+
+  <section id="life">
+    <div class="text">
+      <h2>Where the Ramsar sites are</h2>
+      <p>Each circle is one Ramsar site. Size shows its area and colour shows the decade it was listed.</p>
+      <p>New South Wales has 13 sites and Victoria 12. The Northern Territory has two, yet they cover 2.2 million hectares, almost six times the area of all 13 New South Wales sites.</p>
+    </div>
+    <figure>
+      <div id="symbols" class="vis"></div>
+      <figcaption><b>Why proportional symbols?</b> Area is the key difference between sites, and circle size shows it without hiding where each site is. Six sites on external territories, such as Christmas Island and Ashmore Reef, are not shown.</figcaption>
+    </figure>
+  </section>
+
+  <section id="flyway">
+    <div class="text">
+      <h2>On the wing: a shared flyway</h2>
+      <p>Migratory shorebirds travel the East Asian&ndash;Australasian Flyway each year. Its partnership network lists 26 key sites: 25 in Australia and one in Malaysia, Bako Buntal Bay in Sarawak.</p>
+      <p>The lines join that Malaysian site to the Australian ones. They show links in the network, not the paths of tracked birds.</p>
+      <p>Of the 37 shorebird species in the flyway's 2025 population estimates, 15 are on Australia's threatened species list: 2 critically endangered, 4 endangered and 9 vulnerable.</p>
+    </div>
+    <div class="figs">
+    <figure>
+      <div id="flow" class="vis"></div>
+      <figcaption><b>Why a flow map?</b> A line from origin to destination is the clearest way to show a connection between places. Hover over a point to see the site name.</figcaption>
+    </figure>
+    <figure>
+      <div id="pictogram" class="vis"></div>
+      <figcaption><b>Why a pictogram?</b> Counting icons needs no statistics: red, orange and gold birds are the 15 species at risk. Statuses follow the August 2026 list and can change, so check a species' official profile before quoting it.</figcaption>
+    </figure>
+    </div>
+  </section>
+  <section id="species">
+    <div class="text">
+      <h2>Species at risk</h2>
+      <p>Australia's threatened species list holds 2,119 species that are not yet extinct. Plants make up 1,487 of them and animals the other 632.</p>
+      <p>Among animals, birds are the largest group, with 164 species. Seventy of them are endangered and 18 are critically endangered.</p>
+      <p>South Australia lists 85 threatened birds, more than any other state. New South Wales and Queensland list the most threatened animals overall, 263 and 245. A species listed in several states is counted in each.</p>
+    </div>
+    <div class="figs">
+    <figure>
+      <div id="bars" class="vis"></div>
+      <figcaption><b>Why a grouped bar chart?</b> Bars side by side are the easiest way to compare counts within and between groups. Plants are left out because 1,487 species would dwarf every other bar, and seven fish listed as conservation dependent are not shown. The list covers all habitats, so these are not only wetland species.</figcaption>
+    </figure>
+    <figure>
+      <div id="radar" class="vis"></div>
+      <figcaption><b>Why a radar chart?</b> Each shape is one state's profile across six animal groups, and the same scale on every chart makes the shapes comparable. Points far from the centre show where a state has many threatened species. Radar charts are poor for exact values, so hover over a point. Invertebrates include insects, snails, crabs and spiders.</figcaption>
+    </figure>
+    </div>
+  </section>
+
+  <section id="growth">
+    <div class="text">
+      <h2>A treaty that keeps growing, slowly</h2>
+      <p>The first Australian Ramsar site was listed in 1974. Fifty-one of the 67 sites were listed in the 1980s and 1990s, and only three have been added since 2010.</p>
+      <p>Queensland had no listed sites in 1990. By 2025 it had 640,000 hectares. New South Wales grew from 22,000 to 371,000 hectares.</p>
+    </div>
+    <div class="figs">
+      <figure>
+        <div id="slope" class="vis"></div>
+        <figcaption><b>Why a slope chart?</b> Two dots per state make before-and-after change easy to see, and a steeper line means more area was added. The vertical axis is stretched so that small totals stay visible.</figcaption>
+      </figure>
+      <figure>
+        <div id="multiples" class="vis"></div>
+        <figcaption><b>Why small multiples?</b> One small chart per state avoids nine overlapping lines. Each chart has its own vertical scale, so compare when sites were listed, not heights. These charts count each site's current area from the year it was listed, so they show when sites were added, not changes in wetland size.</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section id="sites">
+    <div class="text">
+      <h2>Which sites, listed when, and how big</h2>
+      <p>Of the 67 Ramsar sites, 29 were listed before 1990, 23 in the 1990s, 12 in the 2000s and 3 since 2010.</p>
+      <p>Ribbon width counts sites, not hectares, and that hides a big difference. Just 13 sites cover more than 100,000 hectares, yet they hold 89% of all listed area. At the other end, 35 sites are under 10,000 hectares, including all 10 of Tasmania's.</p>
+    </div>
+    <figure>
+      <div id="alluvial" class="vis"></div>
+      <figcaption><b>Why an alluvial diagram?</b> It follows each site through three facts at once: where it is, when it was listed and how big it is. Each site is counted once in every column. Hover over a block to dim every ribbon that does not touch it. Area is gazetted area, and external territories include Christmas Island and Ashmore Reef.</figcaption>
+    </figure>
+  </section>
+</main>
+<footer>
+  <p><b>Author:</b> Lim Ding Jian, 8 October 2026.</p>
+  <p><b>Data:</b> DCCEEW, CAPAD 2024 and Ramsar Wetlands of Australia (CC BY 3.0 AU); Ramsar Sites Information Service and Wikipedia list of Australian Ramsar sites (coordinates); East Asian&ndash;Australasian Flyway Partnership site network; Environment Australia (2001), Directory of Important Wetlands in Australia. Basemaps: Natural Earth via vega-datasets; rowanhogan/australian-states.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

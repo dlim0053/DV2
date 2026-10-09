@@ -1,0 +1,396 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Alluvial diagram of Ramsar sites: state, decade listed, size class.",
+  "width": 720,
+  "height": 490,
+  "padding": 5,
+  "title": {
+    "text": "Ramsar sites by state, decade listed and size",
+    "subtitle": "Source: DCCEEW Ramsar Wetlands of Australia. Ribbon width is the number of sites. Hover a block to follow its ribbons.",
+    "anchor": "start",
+    "font": "Young Serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "subtitleFontSize": 12,
+    "offset": 10
+  },
+  "signals": [
+    {
+      "name": "hoverNode",
+      "value": null,
+      "on": [
+        {
+          "events": "@blocks:mouseover",
+          "update": "datum.id"
+        },
+        {
+          "events": "@blocks:mouseout",
+          "update": "null"
+        }
+      ]
+    }
+  ],
+  "data": [
+    {
+      "name": "nodes",
+      "url": "data/alluvial_nodes.csv",
+      "format": {
+        "type": "csv",
+        "parse": "auto"
+      }
+    },
+    {
+      "name": "links",
+      "url": "data/alluvial_links.csv",
+      "format": {
+        "type": "csv",
+        "parse": "auto"
+      },
+      "transform": [
+        {
+          "type": "linkpath",
+          "orient": "horizontal",
+          "shape": "diagonal",
+          "sourceX": "sx",
+          "sourceY": "sy",
+          "targetX": "tx",
+          "targetY": "ty"
+        }
+      ]
+    },
+    {
+      "name": "left",
+      "source": "nodes",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.side == 'left'"
+        }
+      ]
+    },
+    {
+      "name": "inside",
+      "source": "nodes",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.side == 'inside'"
+        }
+      ]
+    },
+    {
+      "name": "right",
+      "source": "nodes",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.side == 'right'"
+        }
+      ]
+    },
+    {
+      "name": "heads",
+      "values": [
+        {
+          "t": "State or territory",
+          "x": 125,
+          "a": "left"
+        },
+        {
+          "t": "Decade listed",
+          "x": 355,
+          "a": "center"
+        },
+        {
+          "t": "Site area (gazetted)",
+          "x": 575,
+          "a": "left"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "NT",
+        "ACT",
+        "EXT"
+      ],
+      "range": [
+        "#8fb8d8",
+        "#f2b66d",
+        "#e98b8c",
+        "#9ed3cd",
+        "#97c68a",
+        "#efd86f",
+        "#c9a8d8",
+        "#f5b6c0",
+        "#c2a58f"
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "path",
+      "name": "ribbons",
+      "from": {
+        "data": "links"
+      },
+      "encode": {
+        "enter": {
+          "tooltip": {
+            "signal": "{'title': datum.src_name + ' to ' + datum.tgt_name, 'Ramsar sites': datum.sites}"
+          },
+          "fill": {
+            "value": null
+          },
+          "strokeCap": {
+            "value": "butt"
+          }
+        },
+        "update": {
+          "path": {
+            "field": "path"
+          },
+          "strokeWidth": {
+            "field": "w"
+          },
+          "stroke": [
+            {
+              "test": "datum.state == 'none'",
+              "value": "#9fb7b3"
+            },
+            {
+              "scale": "color",
+              "field": "state"
+            }
+          ],
+          "strokeOpacity": [
+            {
+              "test": "hoverNode && datum.src != hoverNode && datum.tgt != hoverNode",
+              "value": 0.1
+            },
+            {
+              "value": 0.6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "name": "blocks",
+      "from": {
+        "data": "nodes"
+      },
+      "encode": {
+        "enter": {
+          "tooltip": {
+            "signal": "{'title': datum.name, 'Ramsar sites': datum.sites}"
+          }
+        },
+        "update": {
+          "x": {
+            "field": "x"
+          },
+          "x2": {
+            "signal": "datum.x + datum.w"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": [
+            {
+              "test": "datum.state == 'none'",
+              "value": "#3d5c62"
+            },
+            {
+              "scale": "color",
+              "field": "state"
+            }
+          ],
+          "stroke": [
+            {
+              "test": "datum.id == hoverNode",
+              "value": "#10303a"
+            },
+            {
+              "value": "#ffffff"
+            }
+          ],
+          "strokeWidth": [
+            {
+              "test": "datum.id == hoverNode",
+              "value": 2
+            },
+            {
+              "value": 0.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "left"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x - 6"
+          },
+          "y": {
+            "signal": "(datum.y0 + datum.y1) / 2"
+          },
+          "text": {
+            "field": "label"
+          },
+          "align": {
+            "value": "right"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Instrument Sans"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fill": {
+            "value": "#10303a"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "right"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x + datum.w + 6"
+          },
+          "y": {
+            "signal": "(datum.y0 + datum.y1) / 2"
+          },
+          "text": {
+            "field": "label"
+          },
+          "align": {
+            "value": "left"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Instrument Sans"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fill": {
+            "value": "#10303a"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "inside"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x + datum.w / 2"
+          },
+          "y": {
+            "signal": "(datum.y0 + datum.y1) / 2"
+          },
+          "text": {
+            "field": "label"
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Instrument Sans"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fill": {
+            "value": "#ffffff"
+          },
+          "fontWeight": {
+            "value": "bold"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "heads"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "field": "x"
+          },
+          "y": {
+            "value": 8
+          },
+          "text": {
+            "field": "t"
+          },
+          "align": {
+            "field": "a"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Instrument Sans"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#3d5c62"
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

@@ -1,0 +1,55 @@
+state,criterion,description,sites
+ACT,1,Good example of a wetland type in its bioregion,9
+ACT,2,Plays an important role in a larger wetland system,3
+ACT,3,"Habitat at a vulnerable life stage, or a drought refuge",2
+ACT,4,Supports 1% or more of a national population,1
+ACT,5,Supports nationally endangered or vulnerable species or communities,3
+ACT,6,Outstanding historical or cultural significance,7
+NSW,1,Good example of a wetland type in its bioregion,159
+NSW,2,Plays an important role in a larger wetland system,76
+NSW,3,"Habitat at a vulnerable life stage, or a drought refuge",106
+NSW,4,Supports 1% or more of a national population,34
+NSW,5,Supports nationally endangered or vulnerable species or communities,82
+NSW,6,Outstanding historical or cultural significance,42
+NT,1,Good example of a wetland type in its bioregion,27
+NT,2,Plays an important role in a larger wetland system,27
+NT,3,"Habitat at a vulnerable life stage, or a drought refuge",27
+NT,4,Supports 1% or more of a national population,18
+NT,5,Supports nationally endangered or vulnerable species or communities,11
+NT,6,Outstanding historical or cultural significance,18
+QLD,1,Good example of a wetland type in its bioregion,180
+QLD,2,Plays an important role in a larger wetland system,117
+QLD,3,"Habitat at a vulnerable life stage, or a drought refuge",135
+QLD,4,Supports 1% or more of a national population,48
+QLD,5,Supports nationally endangered or vulnerable species or communities,85
+QLD,6,Outstanding historical or cultural significance,43
+SA,1,Good example of a wetland type in its bioregion,54
+SA,2,Plays an important role in a larger wetland system,25
+SA,3,"Habitat at a vulnerable life stage, or a drought refuge",61
+SA,4,Supports 1% or more of a national population,5
+SA,5,Supports nationally endangered or vulnerable species or communities,33
+SA,6,Outstanding historical or cultural significance,24
+TAS,1,Good example of a wetland type in its bioregion,31
+TAS,2,Plays an important role in a larger wetland system,6
+TAS,3,"Habitat at a vulnerable life stage, or a drought refuge",9
+TAS,4,Supports 1% or more of a national population,4
+TAS,5,Supports nationally endangered or vulnerable species or communities,74
+TAS,6,Outstanding historical or cultural significance,6
+VIC,1,Good example of a wetland type in its bioregion,132
+VIC,2,Plays an important role in a larger wetland system,73
+VIC,3,"Habitat at a vulnerable life stage, or a drought refuge",122
+VIC,4,Supports 1% or more of a national population,50
+VIC,5,Supports nationally endangered or vulnerable species or communities,52
+VIC,6,Outstanding historical or cultural significance,38
+WA,1,Good example of a wetland type in its bioregion,102
+WA,2,Plays an important role in a larger wetland system,65
+WA,3,"Habitat at a vulnerable life stage, or a drought refuge",82
+WA,4,Supports 1% or more of a national population,51
+WA,5,Supports nationally endangered or vulnerable species or communities,27
+WA,6,Outstanding historical or cultural significance,94
+EXT,1,Good example of a wetland type in its bioregion,8
+EXT,2,Plays an important role in a larger wetland system,5
+EXT,3,"Habitat at a vulnerable life stage, or a drought refuge",6
+EXT,4,Supports 1% or more of a national population,6
+EXT,5,Supports nationally endangered or vulnerable species or communities,7
+EXT,6,Outstanding historical or cultural significance,3

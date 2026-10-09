@@ -1,0 +1,163 @@
+state,group,status,species
+ACT,Amphibians,Critically Endangered,2
+ACT,Amphibians,Endangered,1
+ACT,Amphibians,Vulnerable,3
+ACT,Birds,Critically Endangered,3
+ACT,Birds,Endangered,5
+ACT,Birds,Vulnerable,12
+ACT,Fish,Endangered,3
+ACT,Fish,Vulnerable,1
+ACT,Invertebrates & other,Endangered,2
+ACT,Invertebrates & other,Vulnerable,2
+ACT,Mammals,Endangered,7
+ACT,Mammals,Vulnerable,5
+ACT,Plants,Critically Endangered,5
+ACT,Plants,Endangered,7
+ACT,Plants,Vulnerable,6
+ACT,Reptiles,Critically Endangered,1
+ACT,Reptiles,Endangered,1
+ACT,Reptiles,Vulnerable,4
+NSW,Amphibians,Critically Endangered,5
+NSW,Amphibians,Endangered,13
+NSW,Amphibians,Vulnerable,11
+NSW,Birds,Critically Endangered,11
+NSW,Birds,Endangered,24
+NSW,Birds,Vulnerable,46
+NSW,Fish,Conservation Dependent,6
+NSW,Fish,Critically Endangered,8
+NSW,Fish,Endangered,9
+NSW,Fish,Vulnerable,7
+NSW,Invertebrates & other,Critically Endangered,20
+NSW,Invertebrates & other,Endangered,20
+NSW,Invertebrates & other,Vulnerable,3
+NSW,Mammals,Critically Endangered,2
+NSW,Mammals,Endangered,19
+NSW,Mammals,Vulnerable,22
+NSW,Plants,Critically Endangered,106
+NSW,Plants,Endangered,182
+NSW,Plants,Vulnerable,181
+NSW,Reptiles,Critically Endangered,5
+NSW,Reptiles,Endangered,18
+NSW,Reptiles,Vulnerable,14
+NT,Amphibians,Vulnerable,1
+NT,Birds,Critically Endangered,5
+NT,Birds,Endangered,12
+NT,Birds,Vulnerable,21
+NT,Fish,Conservation Dependent,1
+NT,Fish,Critically Endangered,1
+NT,Fish,Endangered,2
+NT,Fish,Vulnerable,4
+NT,Invertebrates & other,Critically Endangered,1
+NT,Invertebrates & other,Endangered,3
+NT,Mammals,Critically Endangered,2
+NT,Mammals,Endangered,11
+NT,Mammals,Vulnerable,20
+NT,Plants,Critically Endangered,3
+NT,Plants,Endangered,13
+NT,Plants,Vulnerable,23
+NT,Reptiles,Critically Endangered,2
+NT,Reptiles,Endangered,9
+NT,Reptiles,Vulnerable,9
+QLD,Amphibians,Critically Endangered,11
+QLD,Amphibians,Endangered,5
+QLD,Amphibians,Vulnerable,7
+QLD,Birds,Critically Endangered,10
+QLD,Birds,Endangered,25
+QLD,Birds,Vulnerable,37
+QLD,Fish,Conservation Dependent,4
+QLD,Fish,Critically Endangered,6
+QLD,Fish,Endangered,12
+QLD,Fish,Vulnerable,7
+QLD,Invertebrates & other,Critically Endangered,9
+QLD,Invertebrates & other,Endangered,15
+QLD,Invertebrates & other,Vulnerable,2
+QLD,Mammals,Critically Endangered,1
+QLD,Mammals,Endangered,22
+QLD,Mammals,Vulnerable,26
+QLD,Plants,Critically Endangered,35
+QLD,Plants,Endangered,109
+QLD,Plants,Vulnerable,194
+QLD,Reptiles,Critically Endangered,15
+QLD,Reptiles,Endangered,16
+QLD,Reptiles,Vulnerable,15
+SA,Amphibians,Vulnerable,1
+SA,Birds,Critically Endangered,8
+SA,Birds,Endangered,32
+SA,Birds,Vulnerable,45
+SA,Fish,Conservation Dependent,3
+SA,Fish,Critically Endangered,5
+SA,Fish,Endangered,8
+SA,Fish,Vulnerable,7
+SA,Invertebrates & other,Critically Endangered,1
+SA,Invertebrates & other,Endangered,2
+SA,Invertebrates & other,Vulnerable,1
+SA,Mammals,Critically Endangered,1
+SA,Mammals,Endangered,19
+SA,Mammals,Vulnerable,20
+SA,Plants,Critically Endangered,16
+SA,Plants,Endangered,53
+SA,Plants,Vulnerable,66
+SA,Reptiles,Endangered,5
+SA,Reptiles,Vulnerable,7
+TAS,Amphibians,Vulnerable,1
+TAS,Birds,Critically Endangered,5
+TAS,Birds,Endangered,17
+TAS,Birds,Vulnerable,35
+TAS,Fish,Conservation Dependent,5
+TAS,Fish,Critically Endangered,2
+TAS,Fish,Endangered,7
+TAS,Fish,Vulnerable,8
+TAS,Invertebrates & other,Critically Endangered,4
+TAS,Invertebrates & other,Endangered,7
+TAS,Invertebrates & other,Vulnerable,7
+TAS,Mammals,Endangered,5
+TAS,Mammals,Vulnerable,6
+TAS,Plants,Critically Endangered,36
+TAS,Plants,Endangered,38
+TAS,Plants,Vulnerable,31
+TAS,Reptiles,Critically Endangered,1
+TAS,Reptiles,Endangered,5
+TAS,Reptiles,Vulnerable,2
+VIC,Amphibians,Critically Endangered,2
+VIC,Amphibians,Endangered,5
+VIC,Amphibians,Vulnerable,4
+VIC,Birds,Critically Endangered,8
+VIC,Birds,Endangered,21
+VIC,Birds,Vulnerable,42
+VIC,Fish,Conservation Dependent,4
+VIC,Fish,Critically Endangered,11
+VIC,Fish,Endangered,11
+VIC,Fish,Vulnerable,8
+VIC,Invertebrates & other,Critically Endangered,2
+VIC,Invertebrates & other,Endangered,8
+VIC,Invertebrates & other,Vulnerable,3
+VIC,Mammals,Critically Endangered,2
+VIC,Mammals,Endangered,14
+VIC,Mammals,Vulnerable,12
+VIC,Plants,Critically Endangered,24
+VIC,Plants,Endangered,63
+VIC,Plants,Vulnerable,88
+VIC,Reptiles,Critically Endangered,1
+VIC,Reptiles,Endangered,9
+VIC,Reptiles,Vulnerable,5
+WA,Amphibians,Critically Endangered,1
+WA,Amphibians,Vulnerable,2
+WA,Birds,Critically Endangered,4
+WA,Birds,Endangered,23
+WA,Birds,Vulnerable,37
+WA,Fish,Conservation Dependent,4
+WA,Fish,Critically Endangered,1
+WA,Fish,Endangered,6
+WA,Fish,Vulnerable,9
+WA,Invertebrates & other,Critically Endangered,10
+WA,Invertebrates & other,Endangered,3
+WA,Invertebrates & other,Vulnerable,4
+WA,Mammals,Critically Endangered,3
+WA,Mammals,Endangered,15
+WA,Mammals,Vulnerable,30
+WA,Plants,Critically Endangered,85
+WA,Plants,Endangered,223
+WA,Plants,Vulnerable,105
+WA,Reptiles,Critically Endangered,5
+WA,Reptiles,Endangered,7
+WA,Reptiles,Vulnerable,10

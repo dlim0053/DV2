@@ -1,0 +1,102 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Threatened animals in each state, by group",
+    "subtitle": "Source: DCCEEW threatened species list, 28 August 2026. Rings mark 25, 50, 75 and 100 species. Plants are not shown.",
+    "anchor": "start", "font": "Young Serif", "fontSize": 16, "fontWeight": 400, "subtitleFontSize": 12
+  },
+  "data": {"url": "data/threatened_radar.csv"},
+  "transform": [{"calculate": "datum.axis_order * 2 * PI / 6", "as": "a"}],
+  "facet": {
+    "field": "state_name", "type": "nominal", "columns": 3, "title": null,
+    "sort": ["New South Wales", "Queensland", "Western Australia", "Victoria", "South Australia", "Tasmania", "Northern Territory", "Australian Capital Territory"],
+    "header": {"labelFontSize": 12, "labelFontWeight": 600, "labelAnchor": "start", "labelOrient": "top", "labelPadding": 2}
+  },
+  "spec": {
+    "width": 210,
+    "height": 210,
+    "layer": [
+      {
+        "transform": [
+          {"calculate": "[0.25, 0.5, 0.75, 1]", "as": "level"},
+          {"flatten": ["level"]},
+          {"calculate": "datum.level * sin(datum.a)", "as": "px"},
+          {"calculate": "datum.level * cos(datum.a)", "as": "py"}
+        ],
+        "mark": {"type": "line", "interpolate": "linear-closed", "stroke": "#c5d3cf", "strokeWidth": 0.8},
+        "encoding": {
+          "x": {"field": "px", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
+          "y": {"field": "py", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
+          "detail": {"field": "level", "type": "nominal"},
+          "order": {"field": "axis_order", "type": "quantitative"}
+        }
+      },
+      {
+        "transform": [
+          {"calculate": "sin(datum.a)", "as": "px"}, {"calculate": "cos(datum.a)", "as": "py"},
+          {"calculate": "0", "as": "zero"}
+        ],
+        "mark": {"type": "rule", "stroke": "#c5d3cf", "strokeWidth": 0.8},
+        "encoding": {
+          "x": {"field": "zero", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
+          "y": {"field": "zero", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
+          "x2": {"field": "px"}, "y2": {"field": "py"}
+        }
+      },
+      {
+        "transform": [
+          {"calculate": "datum.species / datum.max_scale * sin(datum.a)", "as": "px"},
+          {"calculate": "datum.species / datum.max_scale * cos(datum.a)", "as": "py"}
+        ],
+        "mark": {"type": "line", "interpolate": "linear-closed", "fill": "#2f6f5e", "fillOpacity": 0.3, "stroke": "#2f6f5e", "strokeWidth": 2},
+        "encoding": {
+          "x": {"field": "px", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
+          "y": {"field": "py", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
+          "order": {"field": "axis_order", "type": "quantitative"}
+        }
+      },
+      {
+        "transform": [
+          {"calculate": "datum.species / datum.max_scale * sin(datum.a)", "as": "px"},
+          {"calculate": "datum.species / datum.max_scale * cos(datum.a)", "as": "py"}
+        ],
+        "mark": {"type": "circle", "size": 40, "fill": "#2f6f5e", "stroke": "#ffffff", "strokeWidth": 1, "opacity": 1},
+        "encoding": {
+          "x": {"field": "px", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
+          "y": {"field": "py", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
+          "tooltip": [
+            {"field": "state_name", "type": "nominal", "title": "State"},
+            {"field": "group", "type": "nominal", "title": "Group"},
+            {"field": "species", "type": "quantitative", "title": "Threatened species"}
+          ]
+        }
+      },
+      {
+        "transform": [
+          {"calculate": "1.28 * sin(datum.a)", "as": "px"}, {"calculate": "1.28 * cos(datum.a)", "as": "py"}
+        ],
+        "mark": {"type": "text", "fontSize": 10, "color": "#10303a"},
+        "encoding": {
+          "x": {"field": "px", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
+          "y": {"field": "py", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
+          "text": {"field": "axis_label", "type": "nominal"}
+        }
+      },
+      {
+        "transform": [
+          {"filter": "datum.axis_order == 0"},
+          {"calculate": "[0.25, 0.5, 0.75, 1]", "as": "level"},
+          {"flatten": ["level"]},
+          {"calculate": "datum.level * datum.max_scale", "as": "ring_value"}
+        ],
+        "mark": {"type": "text", "fontSize": 8, "color": "#5a7479", "align": "left", "dx": 3, "dy": 6},
+        "encoding": {
+          "x": {"value": 105},
+          "y": {"field": "level", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
+          "text": {"field": "ring_value", "type": "quantitative"}
+        }
+      }
+    ]
+  },
+  "config": {"view": {"stroke": null}, "font": "Instrument Sans"}
+}

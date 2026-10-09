@@ -1,0 +1,23 @@
+group,status,species
+Amphibians,Critically Endangered,18
+Amphibians,Endangered,15
+Amphibians,Vulnerable,16
+Birds,Critically Endangered,18
+Birds,Endangered,70
+Birds,Vulnerable,76
+Fish,Conservation Dependent,7
+Fish,Critically Endangered,28
+Fish,Endangered,32
+Fish,Vulnerable,21
+Invertebrates & other,Critically Endangered,49
+Invertebrates & other,Endangered,49
+Invertebrates & other,Vulnerable,17
+Mammals,Critically Endangered,9
+Mammals,Endangered,47
+Mammals,Vulnerable,57
+Plants,Critically Endangered,309
+Plants,Endangered,615
+Plants,Vulnerable,563
+Reptiles,Critically Endangered,27
+Reptiles,Endangered,42
+Reptiles,Vulnerable,34

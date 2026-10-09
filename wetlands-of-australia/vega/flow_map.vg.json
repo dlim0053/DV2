@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Flyway network sites linking Sarawak and Australia",
+    "subtitle": "Source: East Asian-Australasian Flyway Partnership. Lines show network links, not tracked bird paths.",
+    "anchor": "start", "font": "Young Serif", "fontSize": 16, "fontWeight": 400, "subtitleFontSize": 12
+  },
+  "width": 760,
+  "height": 600,
+  "projection": {"type": "mercator", "center": [127, -22], "scale": 600, "translate": [380, 300]},
+  "layer": [
+    {
+      "data": {"url": "data/world-110m.json", "format": {"type": "topojson", "feature": "countries"}},
+      "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 0.6},
+      "encoding": {
+        "fill": {"condition": {"test": "datum.id == 36 || datum.id == 458", "value": "#cfe0d8"}, "value": "#e6e3da"}
+      }
+    },
+    {
+      "data": {"url": "data/eaafp_flyway_sites.csv"},
+      "transform": [
+        {"filter": "datum.role == 'destination'"},
+        {"calculate": "1.4", "as": "origin_lat"},
+        {"calculate": "110.3", "as": "origin_lon"}
+      ],
+      "mark": {"type": "rule", "stroke": "#2457a6", "strokeWidth": 1.1, "opacity": 0.4},
+      "encoding": {
+        "longitude": {"field": "origin_lon", "type": "quantitative"},
+        "latitude": {"field": "origin_lat", "type": "quantitative"},
+        "longitude2": {"field": "lon"},
+        "latitude2": {"field": "lat"}
+      }
+    },
+    {
+      "data": {"url": "data/eaafp_flyway_sites.csv"},
+      "transform": [{"filter": "datum.role == 'destination'"}],
+      "mark": {"type": "circle", "size": 45, "fill": "#2457a6", "stroke": "#ffffff", "strokeWidth": 1},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "tooltip": [
+          {"field": "site_name", "type": "nominal", "title": "Site"},
+          {"field": "eaaf_code", "type": "nominal", "title": "Network code"},
+          {"field": "region", "type": "nominal", "title": "Region"}
+        ]
+      }
+    },
+    {
+      "data": {"url": "data/eaafp_flyway_sites.csv"},
+      "transform": [{"filter": "datum.role == 'origin'"}],
+      "mark": {"type": "circle", "size": 170, "fill": "#e0a526", "stroke": "#10303a", "strokeWidth": 1.5},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "tooltip": [{"field": "site_name", "type": "nominal", "title": "Site"}, {"field": "region", "type": "nominal", "title": "Region"}]
+      }
+    },
+    {
+      "data": {"url": "data/eaafp_flyway_sites.csv"},
+      "transform": [{"filter": "datum.role == 'origin'"}],
+      "mark": {"type": "text", "align": "left", "dx": 12, "dy": -4, "fontSize": 12, "fontWeight": 600, "color": "#10303a"},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"value": "Bako Buntal Bay, Sarawak"}
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}, "font": "Instrument Sans"}
+}

@@ -1,0 +1,284 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Treemap of DIWA wetland types: kind of wetland, then type.",
+  "width": 700,
+  "height": 460,
+  "padding": 5,
+  "title": {
+    "text": "Wetland types listed in the Directory of Important Wetlands",
+    "subtitle": "Source: Directory of Important Wetlands in Australia, 3rd edition (2001). Box size is the number of type records. Hover for details.",
+    "anchor": "start",
+    "font": "Young Serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "subtitleFontSize": 12,
+    "offset": 10
+  },
+  "signals": [
+    {
+      "name": "hover",
+      "value": null,
+      "on": [
+        {
+          "events": "@leaves:mouseover",
+          "update": "datum"
+        },
+        {
+          "events": "@leaves:mouseout",
+          "update": "null"
+        }
+      ]
+    }
+  ],
+  "data": [
+    {
+      "name": "tree",
+      "url": "data/diwa_treemap.csv",
+      "format": {
+        "type": "csv",
+        "parse": "auto"
+      },
+      "transform": [
+        {
+          "type": "stratify",
+          "key": "id",
+          "parentKey": "parent"
+        },
+        {
+          "type": "treemap",
+          "field": "size",
+          "sort": {
+            "field": "value",
+            "order": "descending"
+          },
+          "round": true,
+          "method": "squarify",
+          "ratio": 1.4,
+          "paddingInner": 1.5,
+          "paddingOuter": 3,
+          "paddingTop": 20,
+          "size": [
+            {
+              "signal": "width"
+            },
+            {
+              "signal": "height"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cats",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth == 1"
+        }
+      ]
+    },
+    {
+      "name": "leaves",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth == 2"
+        }
+      ]
+    },
+    {
+      "name": "leafLabels",
+      "source": "leaves",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "(datum.x1 - datum.x0) > 64 && (datum.y1 - datum.y0) > 26"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": [
+        "Coastal and marine",
+        "Inland",
+        "Human-made"
+      ],
+      "range": [
+        "#3a7ca5",
+        "#2f6f5e",
+        "#8c7b55"
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {
+        "data": "cats"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "scale": "color",
+            "field": "category"
+          },
+          "fillOpacity": {
+            "value": 0.15
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "name": "leaves",
+      "from": {
+        "data": "leaves"
+      },
+      "encode": {
+        "enter": {
+          "tooltip": {
+            "signal": "{'title': datum.name, 'Kind': datum.category, 'Type records': format(datum.total, ','), 'Share of all records': format(datum.pct, '.1f') + '%'}"
+          }
+        },
+        "update": {
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "scale": "color",
+            "field": "category"
+          },
+          "fillOpacity": [
+            {
+              "test": "datum === hover",
+              "value": 1
+            },
+            {
+              "value": 0.85
+            }
+          ],
+          "stroke": [
+            {
+              "test": "datum === hover",
+              "value": "#10303a"
+            },
+            {
+              "value": "#ffffff"
+            }
+          ],
+          "strokeWidth": [
+            {
+              "test": "datum === hover",
+              "value": 2
+            },
+            {
+              "value": 0.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "leafLabels"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 5"
+          },
+          "y": {
+            "signal": "datum.y0 + 5"
+          },
+          "text": {
+            "field": "name"
+          },
+          "limit": {
+            "signal": "datum.x1 - datum.x0 - 10"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "font": {
+            "value": "Instrument Sans"
+          },
+          "fontSize": {
+            "value": 10
+          },
+          "fill": {
+            "value": "#ffffff"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "cats"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 4"
+          },
+          "y": {
+            "signal": "datum.y0 + 4"
+          },
+          "text": {
+            "signal": "datum.name + ': ' + format(datum.total, ',') + ' records (' + format(datum.pct, '.0f') + '%)'"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "font": {
+            "value": "Instrument Sans"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#10303a"
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

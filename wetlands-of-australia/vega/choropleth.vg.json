@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Share of each state's land that is protected, 2024",
+    "subtitle": "Source: DCCEEW CAPAD 2024 (terrestrial). Hover for Ramsar and Directory counts.",
+    "anchor": "start", "font": "Young Serif", "fontSize": 16, "fontWeight": 400, "subtitleFontSize": 12
+  },
+  "width": "container",
+  "height": 460,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "projection": {"type": "conicEqualArea", "parallels": [-18, -36], "rotate": [-134, 0]},
+  "layer": [
+    {
+      "data": {"url": "data/australia_states.geojson", "format": {"type": "json", "property": "features"}},
+      "params": [{"name": "hover", "select": {"type": "point", "on": "mouseover", "clear": "mouseout"}}],
+      "transform": [{
+        "lookup": "properties.state",
+        "from": {
+          "data": {"url": "data/state_summary_combined.csv"},
+          "key": "state",
+          "fields": ["pct_protected", "ramsar_sites", "directory_sites"]
+        }
+      }],
+      "mark": {"type": "geoshape"},
+      "encoding": {
+        "color": {
+          "field": "pct_protected", "type": "quantitative",
+          "scale": {"scheme": "tealblues", "domain": [0, 60]},
+          "legend": {"title": "Land protected (%)", "orient": "bottom-left", "format": ".0f", "gradientLength": 160}
+        },
+        "stroke": {"condition": {"param": "hover", "empty": false, "value": "#10303a"}, "value": "#ffffff"},
+        "strokeWidth": {"condition": {"param": "hover", "empty": false, "value": 2.5}, "value": 0.8},
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "State"},
+          {"field": "pct_protected", "type": "quantitative", "title": "Land protected (%)", "format": ".1f"},
+          {"field": "ramsar_sites", "type": "quantitative", "title": "Ramsar sites"},
+          {"field": "directory_sites", "type": "quantitative", "title": "Directory of Important Wetlands sites"}
+        ]
+      }
+    },
+    {
+      "data": {"url": "data/state_labels.csv"},
+      "transform": [{"filter": "datum.state != 'ACT'"}],
+      "mark": {"type": "text", "fontSize": 11, "fontWeight": 600},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "state", "type": "nominal"},
+        "color": {"condition": {"test": "datum.state == 'TAS'", "value": "#ffffff"}, "value": "#10303a"}
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}, "font": "Instrument Sans"}
+}

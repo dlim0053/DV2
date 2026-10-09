@@ -1,0 +1,424 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Sunburst of DIWA wetland-type records: state, kind of wetland, type.",
+  "width": 560,
+  "height": 560,
+  "padding": 5,
+  "title": {
+    "text": "Make-up of wetland types in each state",
+    "subtitle": "Source: Directory of Important Wetlands in Australia, 3rd edition (2001). Hover a slice for details.",
+    "anchor": "start",
+    "font": "Young Serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "subtitleFontSize": 12,
+    "offset": 10
+  },
+  "signals": [
+    {
+      "name": "cx",
+      "update": "width / 2"
+    },
+    {
+      "name": "cy",
+      "update": "height / 2"
+    },
+    {
+      "name": "hover",
+      "value": null,
+      "on": [
+        {
+          "events": "@arcs:mouseover",
+          "update": "datum"
+        },
+        {
+          "events": "@arcs:mouseout",
+          "update": "null"
+        }
+      ]
+    }
+  ],
+  "data": [
+    {
+      "name": "tree",
+      "url": "data/diwa_sunburst.csv",
+      "format": {
+        "type": "csv",
+        "parse": "auto"
+      },
+      "transform": [
+        {
+          "type": "stratify",
+          "key": "id",
+          "parentKey": "parent"
+        },
+        {
+          "type": "partition",
+          "field": "size",
+          "sort": {
+            "field": "order"
+          },
+          "size": [
+            {
+              "signal": "2 * PI"
+            },
+            {
+              "signal": "width / 2"
+            }
+          ],
+          "as": [
+            "a0",
+            "r0",
+            "a1",
+            "r1",
+            "depth",
+            "children"
+          ]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.depth == 1 ? 1 : datum.depth == 2 ? 0.8 : 0.6",
+          "as": "op"
+        },
+        {
+          "type": "formula",
+          "expr": "(datum.a0 + datum.a1) / 2",
+          "as": "ma"
+        },
+        {
+          "type": "formula",
+          "expr": "(datum.r0 + datum.r1) / 2",
+          "as": "mr"
+        }
+      ]
+    },
+    {
+      "name": "nodes",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth > 0"
+        }
+      ]
+    },
+    {
+      "name": "stateLabels",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth == 1 && (datum.a1 - datum.a0) > 0.22"
+        }
+      ]
+    },
+    {
+      "name": "catLabels",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth == 2 && (datum.a1 - datum.a0) > 0.5"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.name == 'Coastal and marine' ? 'Coastal' : datum.name",
+          "as": "short"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "NT",
+        "ACT",
+        "EXT"
+      ],
+      "range": [
+        "#8fb8d8",
+        "#f2b66d",
+        "#e98b8c",
+        "#9ed3cd",
+        "#97c68a",
+        "#efd86f",
+        "#c9a8d8",
+        "#f5b6c0",
+        "#c2a58f"
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "orient": "bottom",
+      "columns": 3,
+      "symbolType": "circle",
+      "symbolSize": 120,
+      "title": "Inner ring: state or territory",
+      "titleFont": "Instrument Sans",
+      "labelFont": "Instrument Sans",
+      "encode": {
+        "labels": {
+          "update": {
+            "text": {
+              "signal": "({\"NSW\": \"New South Wales\", \"VIC\": \"Victoria\", \"QLD\": \"Queensland\", \"SA\": \"South Australia\", \"WA\": \"Western Australia\", \"TAS\": \"Tasmania\", \"NT\": \"Northern Territory\", \"ACT\": \"Australian Capital Territory\", \"EXT\": \"External territories\"})[datum.value]"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "marks": [
+    {
+      "type": "arc",
+      "name": "arcs",
+      "from": {
+        "data": "nodes"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "cx"
+          },
+          "y": {
+            "signal": "cy"
+          },
+          "tooltip": {
+            "signal": "{'title': datum.name, 'State': datum.state_name, 'Type records': format(datum.total, ',')}"
+          }
+        },
+        "update": {
+          "startAngle": {
+            "field": "a0"
+          },
+          "endAngle": {
+            "field": "a1"
+          },
+          "innerRadius": {
+            "field": "r0"
+          },
+          "outerRadius": {
+            "field": "r1"
+          },
+          "fill": {
+            "scale": "color",
+            "field": "state"
+          },
+          "fillOpacity": [
+            {
+              "test": "datum === hover",
+              "value": 1
+            },
+            {
+              "field": "op"
+            }
+          ],
+          "stroke": [
+            {
+              "test": "datum === hover",
+              "value": "#10303a"
+            },
+            {
+              "value": "#ffffff"
+            }
+          ],
+          "strokeWidth": [
+            {
+              "test": "datum === hover",
+              "value": 2
+            },
+            {
+              "value": 0.6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "stateLabels"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "cx + datum.mr * sin(datum.ma)"
+          },
+          "y": {
+            "signal": "cy - datum.mr * cos(datum.ma)"
+          },
+          "text": {
+            "field": "state"
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Instrument Sans"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fill": {
+            "value": "#10303a"
+          },
+          "fontWeight": {
+            "value": "bold"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "catLabels"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "cx + datum.mr * sin(datum.ma)"
+          },
+          "y": {
+            "signal": "cy - datum.mr * cos(datum.ma)"
+          },
+          "text": {
+            "field": "short"
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Instrument Sans"
+          },
+          "fontSize": {
+            "value": 9
+          },
+          "fill": {
+            "value": "#10303a"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "cx"
+          },
+          "y": {
+            "signal": "cy - 14"
+          },
+          "text": {
+            "value": "Wetland types"
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Instrument Sans"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fill": {
+            "value": "#10303a"
+          },
+          "fontWeight": {
+            "value": "bold"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "cx"
+          },
+          "y": {
+            "signal": "cy + 3"
+          },
+          "text": {
+            "value": "by state, kind and type"
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Instrument Sans"
+          },
+          "fontSize": {
+            "value": 10
+          },
+          "fill": {
+            "value": "#3d5c62"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "cx"
+          },
+          "y": {
+            "signal": "cy + 19"
+          },
+          "text": {
+            "value": "2,745 type records"
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Instrument Sans"
+          },
+          "fontSize": {
+            "value": 10
+          },
+          "fill": {
+            "value": "#3d5c62"
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

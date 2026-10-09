@@ -1,0 +1,18 @@
+id,col,name,state,sites,x,w,y0,y1,side,label
+0:NT,0,Northern Territory,NT,2,125,14,34.0,45.2,left,Northern Territory
+0:TAS,0,Tasmania,TAS,10,125,14,53.2,109.3,left,Tasmania
+0:VIC,0,Victoria,VIC,12,125,14,117.3,184.7,left,Victoria
+0:SA,0,South Australia,SA,6,125,14,192.7,226.4,left,South Australia
+0:ACT,0,Australian Capital Territory,ACT,1,125,14,234.4,240.0,left,ACT
+0:QLD,0,Queensland,QLD,5,125,14,248.0,276.0,left,Queensland
+0:NSW,0,New South Wales,NSW,13,125,14,284.0,357.0,left,New South Wales
+0:WA,0,Western Australia,WA,12,125,14,365.0,432.3,left,Western Australia
+0:EXT,0,External territories,EXT,6,125,14,440.3,474.0,left,External territories
+1:Before 1990,1,Before 1990,none,29,315,80,54.0,216.7,inside,Before 1990: 29
+1:1990s,1,1990s,none,23,315,80,224.7,353.8,inside,1990s: 23
+1:2000s,1,2000s,none,12,315,80,361.8,429.2,inside,2000s: 12
+1:2010 onwards,1,2010 onwards,none,3,315,80,437.2,454.0,inside,2010 onwards: 3
+"2:Under 1,000 ha",2,"Under 1,000 ha",none,19,575,14,54.0,160.6,right,"Under 1,000 ha"
+"2:1,000 to 10,000 ha",2,"1,000 to 10,000 ha",none,16,575,14,168.6,258.4,right,"1,000 to 10,000 ha"
+"2:10,000 to 100,000 ha",2,"10,000 to 100,000 ha",none,19,575,14,266.4,373.0,right,"10,000 to 100,000 ha"
+"2:Over 100,000 ha",2,"Over 100,000 ha",none,13,575,14,381.0,454.0,right,"Over 100,000 ha"

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Threatened animals by group and status",
+    "subtitle": "Source: DCCEEW threatened species list, extracted 28 August 2026. Species not yet extinct. All habitats, not only wetlands.",
+    "anchor": "start", "font": "Young Serif", "fontSize": 16, "fontWeight": 400, "subtitleFontSize": 12
+  },
+  "width": 420,
+  "height": {"step": 44},
+  "data": {"url": "data/threatened_group_status.csv"},
+  "transform": [{"filter": "datum.group != 'Plants' && datum.status != 'Conservation Dependent'"}],
+  "encoding": {
+    "y": {"field": "group", "type": "nominal", "title": null, "sort": {"field": "species", "op": "sum", "order": "descending"}, "axis": {"labelFontSize": 12}},
+    "yOffset": {"field": "status", "type": "nominal", "sort": ["Critically Endangered", "Endangered", "Vulnerable"]},
+    "x": {"field": "species", "type": "quantitative", "title": "Number of species"},
+    "color": {
+      "field": "status", "type": "nominal",
+      "scale": {"domain": ["Critically Endangered", "Endangered", "Vulnerable"], "range": ["#b23a2e", "#e07b2a", "#e0b13a"]},
+      "legend": {"title": "Status", "orient": "bottom"}
+    }
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {"tooltip": [
+        {"field": "group", "type": "nominal", "title": "Group"},
+        {"field": "status", "type": "nominal", "title": "Status"},
+        {"field": "species", "type": "quantitative", "title": "Species"}
+      ]}
+    },
+    {"mark": {"type": "text", "align": "left", "dx": 3, "fontSize": 10}, "encoding": {"text": {"field": "species", "type": "quantitative"}}}
+  ],
+  "config": {"view": {"stroke": null}, "font": "Instrument Sans"}
+}

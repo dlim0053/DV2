@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "15 of the 37 flyway shorebirds are on the threatened species list",
+    "subtitle": "Each bird is one species. Sources: revised 2025 flyway population estimates; DCCEEW threatened species list, extracted 28 August 2026.",
+    "anchor": "start", "font": "Young Serif", "fontSize": 16, "fontWeight": 400, "subtitleFontSize": 12
+  },
+  "width": 500,
+  "height": 210,
+  "data": {"url": "data/shorebird_estimates_2025.csv"},
+  "transform": [
+    {"calculate": "datum.threatened_status == 'Critically Endangered' ? 0 : datum.threatened_status == 'Endangered' ? 1 : datum.threatened_status == 'Vulnerable' ? 2 : 3", "as": "ord"},
+    {"window": [{"op": "row_number", "as": "i"}], "sort": [{"field": "ord"}, {"field": "common_name"}]},
+    {"calculate": "(datum.i - 1) % 10", "as": "col"},
+    {"calculate": "floor((datum.i - 1) / 10)", "as": "row"}
+  ],
+  "encoding": {
+    "x": {"field": "col", "type": "quantitative", "axis": null, "scale": {"domain": [-0.6, 9.6]}},
+    "y": {"field": "row", "type": "quantitative", "axis": null, "scale": {"domain": [3.6, -0.6]}},
+    "tooltip": [
+      {"field": "common_name", "type": "nominal", "title": "Species"},
+      {"field": "threatened_status", "type": "nominal", "title": "Status"},
+      {"field": "pop_low", "type": "quantitative", "title": "Population estimate (low)", "format": ","},
+      {"field": "pop_high", "type": "quantitative", "title": "Population estimate (high)", "format": ","}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {"type": "circle", "size": 1500, "opacity": 0.95},
+      "encoding": {
+        "color": {
+          "field": "threatened_status", "type": "nominal",
+          "scale": {"domain": ["Critically Endangered", "Endangered", "Vulnerable", "Not on list"], "range": ["#b23a2e", "#e07b2a", "#e0b13a", "#cfdad7"]},
+          "legend": {"title": "Status", "orient": "bottom", "symbolSize": 200}
+        }
+      }
+    },
+    {"mark": {"type": "text", "text": "🐦", "fontSize": 22, "baseline": "middle"}}
+  ],
+  "config": {"view": {"stroke": null}, "font": "Instrument Sans"}
+}

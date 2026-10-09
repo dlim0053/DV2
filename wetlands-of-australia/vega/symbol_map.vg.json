@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Ramsar sites by area and decade of listing",
+    "subtitle": "Source: DCCEEW Ramsar Wetlands of Australia; coordinates from the Ramsar Sites Information Service. Area is gazetted area.",
+    "anchor": "start", "font": "Young Serif", "fontSize": 16, "fontWeight": 400, "subtitleFontSize": 12
+  },
+  "width": "container",
+  "height": 460,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "projection": {"type": "conicEqualArea", "parallels": [-18, -36], "rotate": [-134, 0]},
+  "layer": [
+    {
+      "data": {"url": "data/australia_states.geojson", "format": {"type": "json", "property": "features"}},
+      "mark": {"type": "geoshape", "fill": "#dcd8cc", "stroke": "#ffffff", "strokeWidth": 0.8}
+    },
+    {
+      "data": {"url": "data/ramsar_sites_clean.csv"},
+      "transform": [
+        {"filter": "datum.state != 'EXT'"},
+        {"calculate": "floor(datum.designation_year / 10) * 10 + 's'", "as": "decade"}
+      ],
+      "mark": {"type": "circle", "opacity": 0.75, "stroke": "#ffffff", "strokeWidth": 0.6},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "size": {
+          "field": "gazetted_area_ha", "type": "quantitative",
+          "scale": {"type": "sqrt", "range": [12, 2400]},
+          "legend": {"title": "Area (ha)", "format": "~s", "orient": "bottom-left"}
+        },
+        "color": {
+          "field": "decade", "type": "ordinal",
+          "scale": {"scheme": "viridis"},
+          "legend": {"title": "Listed in", "orient": "bottom-left"}
+        },
+        "order": {"field": "gazetted_area_ha", "type": "quantitative", "sort": "descending"},
+        "tooltip": [
+          {"field": "ramsar_name", "type": "nominal", "title": "Site"},
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "gazetted_area_ha", "type": "quantitative", "title": "Area (ha)", "format": ","},
+          {"field": "designation_year", "type": "quantitative", "title": "Year listed", "format": "d"}
+        ]
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}, "font": "Instrument Sans"}
+}

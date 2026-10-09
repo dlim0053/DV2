@@ -1,0 +1,22 @@
+:root{--ink:#10303a;--mist:#eef3f1;--reed:#2f6f5e;--silt:#dcd8cc;--flyway:#2457a6;--line:#c5d3cf;--muted:#3d5c62}
+*{box-sizing:border-box}
+body{margin:0;background:var(--mist);color:var(--ink);font:400 1.0625rem/1.6 "Instrument Sans",system-ui,sans-serif}
+h1,h2{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.15;margin:0 0 .6em}
+h1{font-size:clamp(2.1rem,5vw,3.5rem);max-width:20ch}
+h2{font-size:1.65rem}
+.hero,section,footer{max-width:1180px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem}
+.hero{padding-top:4rem;padding-bottom:2.5rem}
+.intro{max-width:58ch;font-size:1.2rem}
+.byline{font-size:.9rem;color:var(--muted)}
+section{padding-top:3rem;padding-bottom:3rem;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:2.5rem;align-items:start}
+.text{position:sticky;top:1.5rem}
+.text p{max-width:46ch}
+figure{margin:0}
+.figs{display:grid;gap:2.5rem}
+.vis{width:100%;overflow-x:auto}
+.vega-embed{width:100%;display:block}
+figcaption{font-size:.9rem;color:var(--muted);margin-top:.6rem;max-width:68ch}
+footer{border-top:1px solid var(--line);padding-top:2rem;padding-bottom:3rem;font-size:.85rem;color:var(--muted)}
+footer p{max-width:90ch}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--flyway);outline-offset:2px}
+@media(max-width:900px){section{grid-template-columns:1fr;gap:1.2rem}.text{position:static}}

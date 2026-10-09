@@ -1,0 +1,263 @@
+id,parent,name,state,state_name,size,total,order
+all,,Australia,,,0,2745,0
+QLD,all,Queensland,QLD,Queensland,0,1061,1
+QLD|Coastal and marine,QLD,Coastal and marine,QLD,Queensland,0,478,1
+QLD|A1,QLD|Coastal and marine,Shallow marine waters,QLD,Queensland,43,43,1
+QLD|A2,QLD|Coastal and marine,"Subtidal aquatic beds (seagrass, kelp)",QLD,Queensland,42,42,2
+QLD|A3,QLD|Coastal and marine,Coral reefs,QLD,Queensland,11,11,3
+QLD|A4,QLD|Coastal and marine,Rocky marine shores,QLD,Queensland,22,22,4
+QLD|A5,QLD|Coastal and marine,Sand and shingle beaches,QLD,Queensland,52,52,5
+QLD|A6,QLD|Coastal and marine,Estuarine waters,QLD,Queensland,51,51,6
+QLD|A7,QLD|Coastal and marine,"Intertidal mud, sand and salt flats",QLD,Queensland,56,56,7
+QLD|A8,QLD|Coastal and marine,Intertidal marshes,QLD,Queensland,51,51,8
+QLD|A9,QLD|Coastal and marine,Mangroves and tidal forests,QLD,Queensland,64,64,9
+QLD|A10,QLD|Coastal and marine,Brackish and saline lagoons,QLD,Queensland,28,28,10
+QLD|A11,QLD|Coastal and marine,Coastal freshwater lagoons and marshes,QLD,Queensland,35,35,11
+QLD|A12,QLD|Coastal and marine,Non-tidal freshwater forested wetlands,QLD,Queensland,23,23,12
+QLD|Inland,QLD,Inland,QLD,Queensland,0,546,2
+QLD|B1,QLD|Inland,Permanent rivers and streams,QLD,Queensland,49,49,1
+QLD|B2,QLD|Inland,Seasonal rivers and streams,QLD,Queensland,72,72,2
+QLD|B4,QLD|Inland,Riverine floodplains,QLD,Queensland,56,56,4
+QLD|B5,QLD|Inland,Permanent freshwater lakes,QLD,Queensland,40,40,5
+QLD|B6,QLD|Inland,Seasonal freshwater lakes,QLD,Queensland,54,54,6
+QLD|B7,QLD|Inland,Permanent saline lakes,QLD,Queensland,5,5,7
+QLD|B8,QLD|Inland,Seasonal saline lakes,QLD,Queensland,13,13,8
+QLD|B9,QLD|Inland,Permanent freshwater ponds and marshes,QLD,Queensland,45,45,9
+QLD|B10,QLD|Inland,Seasonal freshwater ponds and marshes,QLD,Queensland,65,65,10
+QLD|B11,QLD|Inland,Permanent saline marshes,QLD,Queensland,2,2,11
+QLD|B12,QLD|Inland,Seasonal saline marshes,QLD,Queensland,9,9,12
+QLD|B13,QLD|Inland,Shrub swamps,QLD,Queensland,48,48,13
+QLD|B14,QLD|Inland,Freshwater swamp forest,QLD,Queensland,62,62,14
+QLD|B15,QLD|Inland,Peatlands,QLD,Queensland,10,10,15
+QLD|B17,QLD|Inland,"Springs, oases and rock pools",QLD,Queensland,13,13,17
+QLD|B18,QLD|Inland,Geothermal wetlands,QLD,Queensland,1,1,18
+QLD|B19,QLD|Inland,Inland karst wetlands,QLD,Queensland,2,2,19
+QLD|Human-made,QLD,Human-made,QLD,Queensland,0,37,3
+QLD|C1,QLD|Human-made,"Water storage areas (reservoirs, dams)",QLD,Queensland,15,15,1
+QLD|C2,QLD|Human-made,Farm ponds and stock ponds,QLD,Queensland,9,9,2
+QLD|C3,QLD|Human-made,Aquaculture ponds,QLD,Queensland,2,2,3
+QLD|C4,QLD|Human-made,Salt pans and salines,QLD,Queensland,1,1,4
+QLD|C5,QLD|Human-made,Excavations and mining pools,QLD,Queensland,1,1,5
+QLD|C6,QLD|Human-made,Wastewater treatment,QLD,Queensland,3,3,6
+QLD|C7,QLD|Human-made,Irrigated land and channels,QLD,Queensland,3,3,7
+QLD|C8,QLD|Human-made,Seasonally flooded farmland,QLD,Queensland,3,3,8
+NSW,all,New South Wales,NSW,New South Wales,0,508,2
+NSW|Coastal and marine,NSW,Coastal and marine,NSW,New South Wales,0,219,1
+NSW|A1,NSW|Coastal and marine,Shallow marine waters,NSW,New South Wales,3,3,1
+NSW|A2,NSW|Coastal and marine,"Subtidal aquatic beds (seagrass, kelp)",NSW,New South Wales,20,20,2
+NSW|A3,NSW|Coastal and marine,Coral reefs,NSW,New South Wales,1,1,3
+NSW|A4,NSW|Coastal and marine,Rocky marine shores,NSW,New South Wales,9,9,4
+NSW|A5,NSW|Coastal and marine,Sand and shingle beaches,NSW,New South Wales,13,13,5
+NSW|A6,NSW|Coastal and marine,Estuarine waters,NSW,New South Wales,31,31,6
+NSW|A7,NSW|Coastal and marine,"Intertidal mud, sand and salt flats",NSW,New South Wales,24,24,7
+NSW|A8,NSW|Coastal and marine,Intertidal marshes,NSW,New South Wales,33,33,8
+NSW|A9,NSW|Coastal and marine,Mangroves and tidal forests,NSW,New South Wales,31,31,9
+NSW|A10,NSW|Coastal and marine,Brackish and saline lagoons,NSW,New South Wales,16,16,10
+NSW|A11,NSW|Coastal and marine,Coastal freshwater lagoons and marshes,NSW,New South Wales,23,23,11
+NSW|A12,NSW|Coastal and marine,Non-tidal freshwater forested wetlands,NSW,New South Wales,15,15,12
+NSW|Inland,NSW,Inland,NSW,New South Wales,0,276,2
+NSW|B1,NSW|Inland,Permanent rivers and streams,NSW,New South Wales,10,10,1
+NSW|B2,NSW|Inland,Seasonal rivers and streams,NSW,New South Wales,25,25,2
+NSW|B3,NSW|Inland,Inland deltas,NSW,New South Wales,2,2,3
+NSW|B4,NSW|Inland,Riverine floodplains,NSW,New South Wales,23,23,4
+NSW|B5,NSW|Inland,Permanent freshwater lakes,NSW,New South Wales,16,16,5
+NSW|B6,NSW|Inland,Seasonal freshwater lakes,NSW,New South Wales,44,44,6
+NSW|B7,NSW|Inland,Permanent saline lakes,NSW,New South Wales,7,7,7
+NSW|B8,NSW|Inland,Seasonal saline lakes,NSW,New South Wales,8,8,8
+NSW|B9,NSW|Inland,Permanent freshwater ponds and marshes,NSW,New South Wales,18,18,9
+NSW|B10,NSW|Inland,Seasonal freshwater ponds and marshes,NSW,New South Wales,34,34,10
+NSW|B11,NSW|Inland,Permanent saline marshes,NSW,New South Wales,1,1,11
+NSW|B12,NSW|Inland,Seasonal saline marshes,NSW,New South Wales,2,2,12
+NSW|B13,NSW|Inland,Shrub swamps,NSW,New South Wales,31,31,13
+NSW|B14,NSW|Inland,Freshwater swamp forest,NSW,New South Wales,26,26,14
+NSW|B15,NSW|Inland,Peatlands,NSW,New South Wales,26,26,15
+NSW|B16,NSW|Inland,Alpine wetlands,NSW,New South Wales,2,2,16
+NSW|B17,NSW|Inland,"Springs, oases and rock pools",NSW,New South Wales,1,1,17
+NSW|Human-made,NSW,Human-made,NSW,New South Wales,0,13,3
+NSW|C1,NSW|Human-made,"Water storage areas (reservoirs, dams)",NSW,New South Wales,7,7,1
+NSW|C2,NSW|Human-made,Farm ponds and stock ponds,NSW,New South Wales,1,1,2
+NSW|C4,NSW|Human-made,Salt pans and salines,NSW,New South Wales,1,1,4
+NSW|C5,NSW|Human-made,Excavations and mining pools,NSW,New South Wales,1,1,5
+NSW|C6,NSW|Human-made,Wastewater treatment,NSW,New South Wales,1,1,6
+NSW|C7,NSW|Human-made,Irrigated land and channels,NSW,New South Wales,1,1,7
+NSW|C8,NSW|Human-made,Seasonally flooded farmland,NSW,New South Wales,1,1,8
+VIC,all,Victoria,VIC,Victoria,0,337,3
+VIC|Coastal and marine,VIC,Coastal and marine,VIC,Victoria,0,85,1
+VIC|A1,VIC|Coastal and marine,Shallow marine waters,VIC,Victoria,6,6,1
+VIC|A2,VIC|Coastal and marine,"Subtidal aquatic beds (seagrass, kelp)",VIC,Victoria,6,6,2
+VIC|A4,VIC|Coastal and marine,Rocky marine shores,VIC,Victoria,3,3,4
+VIC|A5,VIC|Coastal and marine,Sand and shingle beaches,VIC,Victoria,8,8,5
+VIC|A6,VIC|Coastal and marine,Estuarine waters,VIC,Victoria,7,7,6
+VIC|A7,VIC|Coastal and marine,"Intertidal mud, sand and salt flats",VIC,Victoria,9,9,7
+VIC|A8,VIC|Coastal and marine,Intertidal marshes,VIC,Victoria,16,16,8
+VIC|A9,VIC|Coastal and marine,Mangroves and tidal forests,VIC,Victoria,3,3,9
+VIC|A10,VIC|Coastal and marine,Brackish and saline lagoons,VIC,Victoria,14,14,10
+VIC|A11,VIC|Coastal and marine,Coastal freshwater lagoons and marshes,VIC,Victoria,13,13,11
+VIC|Inland,VIC,Inland,VIC,Victoria,0,232,2
+VIC|B1,VIC|Inland,Permanent rivers and streams,VIC,Victoria,25,25,1
+VIC|B2,VIC|Inland,Seasonal rivers and streams,VIC,Victoria,6,6,2
+VIC|B4,VIC|Inland,Riverine floodplains,VIC,Victoria,23,23,4
+VIC|B5,VIC|Inland,Permanent freshwater lakes,VIC,Victoria,20,20,5
+VIC|B6,VIC|Inland,Seasonal freshwater lakes,VIC,Victoria,19,19,6
+VIC|B7,VIC|Inland,Permanent saline lakes,VIC,Victoria,27,27,7
+VIC|B8,VIC|Inland,Seasonal saline lakes,VIC,Victoria,22,22,8
+VIC|B9,VIC|Inland,Permanent freshwater ponds and marshes,VIC,Victoria,5,5,9
+VIC|B10,VIC|Inland,Seasonal freshwater ponds and marshes,VIC,Victoria,30,30,10
+VIC|B11,VIC|Inland,Permanent saline marshes,VIC,Victoria,3,3,11
+VIC|B12,VIC|Inland,Seasonal saline marshes,VIC,Victoria,16,16,12
+VIC|B13,VIC|Inland,Shrub swamps,VIC,Victoria,11,11,13
+VIC|B14,VIC|Inland,Freshwater swamp forest,VIC,Victoria,17,17,14
+VIC|B15,VIC|Inland,Peatlands,VIC,Victoria,8,8,15
+VIC|Human-made,VIC,Human-made,VIC,Victoria,0,20,3
+VIC|C1,VIC|Human-made,"Water storage areas (reservoirs, dams)",VIC,Victoria,8,8,1
+VIC|C2,VIC|Human-made,Farm ponds and stock ponds,VIC,Victoria,2,2,2
+VIC|C4,VIC|Human-made,Salt pans and salines,VIC,Victoria,5,5,4
+VIC|C6,VIC|Human-made,Wastewater treatment,VIC,Victoria,2,2,6
+VIC|C9,VIC|Human-made,Canals,VIC,Victoria,3,3,9
+WA,all,Western Australia,WA,Western Australia,0,301,4
+WA|Coastal and marine,WA,Coastal and marine,WA,Western Australia,0,64,1
+WA|A1,WA|Coastal and marine,Shallow marine waters,WA,Western Australia,3,3,1
+WA|A2,WA|Coastal and marine,"Subtidal aquatic beds (seagrass, kelp)",WA,Western Australia,5,5,2
+WA|A4,WA|Coastal and marine,Rocky marine shores,WA,Western Australia,2,2,4
+WA|A5,WA|Coastal and marine,Sand and shingle beaches,WA,Western Australia,5,5,5
+WA|A6,WA|Coastal and marine,Estuarine waters,WA,Western Australia,9,9,6
+WA|A7,WA|Coastal and marine,"Intertidal mud, sand and salt flats",WA,Western Australia,14,14,7
+WA|A8,WA|Coastal and marine,Intertidal marshes,WA,Western Australia,10,10,8
+WA|A9,WA|Coastal and marine,Mangroves and tidal forests,WA,Western Australia,10,10,9
+WA|A10,WA|Coastal and marine,Brackish and saline lagoons,WA,Western Australia,5,5,10
+WA|A12,WA|Coastal and marine,Non-tidal freshwater forested wetlands,WA,Western Australia,1,1,12
+WA|Inland,WA,Inland,WA,Western Australia,0,230,2
+WA|B1,WA|Inland,Permanent rivers and streams,WA,Western Australia,18,18,1
+WA|B2,WA|Inland,Seasonal rivers and streams,WA,Western Australia,18,18,2
+WA|B4,WA|Inland,Riverine floodplains,WA,Western Australia,6,6,4
+WA|B5,WA|Inland,Permanent freshwater lakes,WA,Western Australia,12,12,5
+WA|B6,WA|Inland,Seasonal freshwater lakes,WA,Western Australia,15,15,6
+WA|B7,WA|Inland,Permanent saline lakes,WA,Western Australia,19,19,7
+WA|B8,WA|Inland,Seasonal saline lakes,WA,Western Australia,23,23,8
+WA|B9,WA|Inland,Permanent freshwater ponds and marshes,WA,Western Australia,8,8,9
+WA|B10,WA|Inland,Seasonal freshwater ponds and marshes,WA,Western Australia,25,25,10
+WA|B11,WA|Inland,Permanent saline marshes,WA,Western Australia,2,2,11
+WA|B12,WA|Inland,Seasonal saline marshes,WA,Western Australia,16,16,12
+WA|B13,WA|Inland,Shrub swamps,WA,Western Australia,13,13,13
+WA|B14,WA|Inland,Freshwater swamp forest,WA,Western Australia,28,28,14
+WA|B15,WA|Inland,Peatlands,WA,Western Australia,11,11,15
+WA|B17,WA|Inland,"Springs, oases and rock pools",WA,Western Australia,11,11,17
+WA|B19,WA|Inland,Inland karst wetlands,WA,Western Australia,5,5,19
+WA|Human-made,WA,Human-made,WA,Western Australia,0,7,3
+WA|C1,WA|Human-made,"Water storage areas (reservoirs, dams)",WA,Western Australia,3,3,1
+WA|C4,WA|Human-made,Salt pans and salines,WA,Western Australia,2,2,4
+WA|C5,WA|Human-made,Excavations and mining pools,WA,Western Australia,1,1,5
+WA|C7,WA|Human-made,Irrigated land and channels,WA,Western Australia,1,1,7
+SA,all,South Australia,SA,South Australia,0,227,5
+SA|Coastal and marine,SA,Coastal and marine,SA,South Australia,0,101,1
+SA|A1,SA|Coastal and marine,Shallow marine waters,SA,South Australia,16,16,1
+SA|A2,SA|Coastal and marine,"Subtidal aquatic beds (seagrass, kelp)",SA,South Australia,11,11,2
+SA|A4,SA|Coastal and marine,Rocky marine shores,SA,South Australia,4,4,4
+SA|A5,SA|Coastal and marine,Sand and shingle beaches,SA,South Australia,13,13,5
+SA|A6,SA|Coastal and marine,Estuarine waters,SA,South Australia,12,12,6
+SA|A7,SA|Coastal and marine,"Intertidal mud, sand and salt flats",SA,South Australia,17,17,7
+SA|A8,SA|Coastal and marine,Intertidal marshes,SA,South Australia,13,13,8
+SA|A9,SA|Coastal and marine,Mangroves and tidal forests,SA,South Australia,9,9,9
+SA|A10,SA|Coastal and marine,Brackish and saline lagoons,SA,South Australia,3,3,10
+SA|A11,SA|Coastal and marine,Coastal freshwater lagoons and marshes,SA,South Australia,3,3,11
+SA|Inland,SA,Inland,SA,South Australia,0,121,2
+SA|B1,SA|Inland,Permanent rivers and streams,SA,South Australia,11,11,1
+SA|B2,SA|Inland,Seasonal rivers and streams,SA,South Australia,6,6,2
+SA|B3,SA|Inland,Inland deltas,SA,South Australia,1,1,3
+SA|B4,SA|Inland,Riverine floodplains,SA,South Australia,15,15,4
+SA|B5,SA|Inland,Permanent freshwater lakes,SA,South Australia,10,10,5
+SA|B6,SA|Inland,Seasonal freshwater lakes,SA,South Australia,15,15,6
+SA|B7,SA|Inland,Permanent saline lakes,SA,South Australia,10,10,7
+SA|B8,SA|Inland,Seasonal saline lakes,SA,South Australia,9,9,8
+SA|B9,SA|Inland,Permanent freshwater ponds and marshes,SA,South Australia,7,7,9
+SA|B10,SA|Inland,Seasonal freshwater ponds and marshes,SA,South Australia,5,5,10
+SA|B11,SA|Inland,Permanent saline marshes,SA,South Australia,4,4,11
+SA|B12,SA|Inland,Seasonal saline marshes,SA,South Australia,4,4,12
+SA|B13,SA|Inland,Shrub swamps,SA,South Australia,7,7,13
+SA|B14,SA|Inland,Freshwater swamp forest,SA,South Australia,4,4,14
+SA|B15,SA|Inland,Peatlands,SA,South Australia,7,7,15
+SA|B17,SA|Inland,"Springs, oases and rock pools",SA,South Australia,4,4,17
+SA|B19,SA|Inland,Inland karst wetlands,SA,South Australia,2,2,19
+SA|Human-made,SA,Human-made,SA,South Australia,0,5,3
+SA|C1,SA|Human-made,"Water storage areas (reservoirs, dams)",SA,South Australia,1,1,1
+SA|C4,SA|Human-made,Salt pans and salines,SA,South Australia,3,3,4
+SA|C6,SA|Human-made,Wastewater treatment,SA,South Australia,1,1,6
+NT,all,Northern Territory,NT,Northern Territory,0,162,6
+NT|Coastal and marine,NT,Coastal and marine,NT,Northern Territory,0,62,1
+NT|A1,NT|Coastal and marine,Shallow marine waters,NT,Northern Territory,3,3,1
+NT|A2,NT|Coastal and marine,"Subtidal aquatic beds (seagrass, kelp)",NT,Northern Territory,4,4,2
+NT|A3,NT|Coastal and marine,Coral reefs,NT,Northern Territory,1,1,3
+NT|A5,NT|Coastal and marine,Sand and shingle beaches,NT,Northern Territory,1,1,5
+NT|A6,NT|Coastal and marine,Estuarine waters,NT,Northern Territory,14,14,6
+NT|A7,NT|Coastal and marine,"Intertidal mud, sand and salt flats",NT,Northern Territory,13,13,7
+NT|A8,NT|Coastal and marine,Intertidal marshes,NT,Northern Territory,11,11,8
+NT|A9,NT|Coastal and marine,Mangroves and tidal forests,NT,Northern Territory,13,13,9
+NT|A10,NT|Coastal and marine,Brackish and saline lagoons,NT,Northern Territory,1,1,10
+NT|A11,NT|Coastal and marine,Coastal freshwater lagoons and marshes,NT,Northern Territory,1,1,11
+NT|Inland,NT,Inland,NT,Northern Territory,0,97,2
+NT|B1,NT|Inland,Permanent rivers and streams,NT,Northern Territory,14,14,1
+NT|B2,NT|Inland,Seasonal rivers and streams,NT,Northern Territory,7,7,2
+NT|B3,NT|Inland,Inland deltas,NT,Northern Territory,1,1,3
+NT|B4,NT|Inland,Riverine floodplains,NT,Northern Territory,11,11,4
+NT|B5,NT|Inland,Permanent freshwater lakes,NT,Northern Territory,1,1,5
+NT|B6,NT|Inland,Seasonal freshwater lakes,NT,Northern Territory,12,12,6
+NT|B8,NT|Inland,Seasonal saline lakes,NT,Northern Territory,2,2,8
+NT|B9,NT|Inland,Permanent freshwater ponds and marshes,NT,Northern Territory,6,6,9
+NT|B10,NT|Inland,Seasonal freshwater ponds and marshes,NT,Northern Territory,15,15,10
+NT|B13,NT|Inland,Shrub swamps,NT,Northern Territory,9,9,13
+NT|B14,NT|Inland,Freshwater swamp forest,NT,Northern Territory,17,17,14
+NT|B17,NT|Inland,"Springs, oases and rock pools",NT,Northern Territory,2,2,17
+NT|Human-made,NT,Human-made,NT,Northern Territory,0,3,3
+NT|C1,NT|Human-made,"Water storage areas (reservoirs, dams)",NT,Northern Territory,2,2,1
+NT|C2,NT|Human-made,Farm ponds and stock ponds,NT,Northern Territory,1,1,2
+TAS,all,Tasmania,TAS,Tasmania,0,101,7
+TAS|Coastal and marine,TAS,Coastal and marine,TAS,Tasmania,0,55,1
+TAS|A1,TAS|Coastal and marine,Shallow marine waters,TAS,Tasmania,4,4,1
+TAS|A2,TAS|Coastal and marine,"Subtidal aquatic beds (seagrass, kelp)",TAS,Tasmania,2,2,2
+TAS|A4,TAS|Coastal and marine,Rocky marine shores,TAS,Tasmania,3,3,4
+TAS|A5,TAS|Coastal and marine,Sand and shingle beaches,TAS,Tasmania,2,2,5
+TAS|A6,TAS|Coastal and marine,Estuarine waters,TAS,Tasmania,5,5,6
+TAS|A7,TAS|Coastal and marine,"Intertidal mud, sand and salt flats",TAS,Tasmania,1,1,7
+TAS|A8,TAS|Coastal and marine,Intertidal marshes,TAS,Tasmania,4,4,8
+TAS|A9,TAS|Coastal and marine,Mangroves and tidal forests,TAS,Tasmania,1,1,9
+TAS|A10,TAS|Coastal and marine,Brackish and saline lagoons,TAS,Tasmania,13,13,10
+TAS|A11,TAS|Coastal and marine,Coastal freshwater lagoons and marshes,TAS,Tasmania,20,20,11
+TAS|Inland,TAS,Inland,TAS,Tasmania,0,43,2
+TAS|B1,TAS|Inland,Permanent rivers and streams,TAS,Tasmania,11,11,1
+TAS|B5,TAS|Inland,Permanent freshwater lakes,TAS,Tasmania,9,9,5
+TAS|B6,TAS|Inland,Seasonal freshwater lakes,TAS,Tasmania,2,2,6
+TAS|B7,TAS|Inland,Permanent saline lakes,TAS,Tasmania,3,3,7
+TAS|B8,TAS|Inland,Seasonal saline lakes,TAS,Tasmania,2,2,8
+TAS|B9,TAS|Inland,Permanent freshwater ponds and marshes,TAS,Tasmania,3,3,9
+TAS|B15,TAS|Inland,Peatlands,TAS,Tasmania,13,13,15
+TAS|Human-made,TAS,Human-made,TAS,Tasmania,0,3,3
+TAS|C1,TAS|Human-made,"Water storage areas (reservoirs, dams)",TAS,Tasmania,1,1,1
+TAS|C4,TAS|Human-made,Salt pans and salines,TAS,Tasmania,2,2,4
+EXT,all,External territories,EXT,External territories,0,29,8
+EXT|Coastal and marine,EXT,Coastal and marine,EXT,External territories,0,23,1
+EXT|A1,EXT|Coastal and marine,Shallow marine waters,EXT,External territories,1,1,1
+EXT|A2,EXT|Coastal and marine,"Subtidal aquatic beds (seagrass, kelp)",EXT,External territories,3,3,2
+EXT|A3,EXT|Coastal and marine,Coral reefs,EXT,External territories,6,6,3
+EXT|A4,EXT|Coastal and marine,Rocky marine shores,EXT,External territories,2,2,4
+EXT|A5,EXT|Coastal and marine,Sand and shingle beaches,EXT,External territories,6,6,5
+EXT|A7,EXT|Coastal and marine,"Intertidal mud, sand and salt flats",EXT,External territories,2,2,7
+EXT|A9,EXT|Coastal and marine,Mangroves and tidal forests,EXT,External territories,1,1,9
+EXT|A10,EXT|Coastal and marine,Brackish and saline lagoons,EXT,External territories,1,1,10
+EXT|A11,EXT|Coastal and marine,Coastal freshwater lagoons and marshes,EXT,External territories,1,1,11
+EXT|Inland,EXT,Inland,EXT,External territories,0,6,2
+EXT|B6,EXT|Inland,Seasonal freshwater lakes,EXT,External territories,1,1,6
+EXT|B14,EXT|Inland,Freshwater swamp forest,EXT,External territories,1,1,14
+EXT|B15,EXT|Inland,Peatlands,EXT,External territories,1,1,15
+EXT|B16,EXT|Inland,Alpine wetlands,EXT,External territories,1,1,16
+EXT|B17,EXT|Inland,"Springs, oases and rock pools",EXT,External territories,2,2,17
+ACT,all,Australian Capital Territory,ACT,Australian Capital Territory,0,19,9
+ACT|Inland,ACT,Inland,ACT,Australian Capital Territory,0,17,2
+ACT|B1,ACT|Inland,Permanent rivers and streams,ACT,Australian Capital Territory,3,3,1
+ACT|B2,ACT|Inland,Seasonal rivers and streams,ACT,Australian Capital Territory,1,1,2
+ACT|B4,ACT|Inland,Riverine floodplains,ACT,Australian Capital Territory,1,1,4
+ACT|B9,ACT|Inland,Permanent freshwater ponds and marshes,ACT,Australian Capital Territory,3,3,9
+ACT|B10,ACT|Inland,Seasonal freshwater ponds and marshes,ACT,Australian Capital Territory,6,6,10
+ACT|B15,ACT|Inland,Peatlands,ACT,Australian Capital Territory,3,3,15
+ACT|Human-made,ACT,Human-made,ACT,Australian Capital Territory,0,2,3
+ACT|C1,ACT|Human-made,"Water storage areas (reservoirs, dams)",ACT,Australian Capital Territory,1,1,1
+ACT|C6,ACT|Human-made,Wastewater treatment,ACT,Australian Capital Territory,1,1,6

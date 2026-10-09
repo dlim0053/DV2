@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Wetland types listed in each state",
+    "subtitle": "Source: Directory of Important Wetlands in Australia, 3rd edition (2001). Darker means more sites.",
+    "anchor": "start", "font": "Young Serif", "fontSize": 16, "fontWeight": 400, "subtitleFontSize": 12
+  },
+  "data": {"url": "data/diwa_type_by_state.csv"},
+  "transform": [{"calculate": "toNumber(substring(datum.type_code, 1))", "as": "n"}],
+  "facet": {
+    "row": {
+      "field": "category", "type": "nominal", "title": null,
+      "sort": ["Coastal and marine", "Inland", "Human-made"],
+      "header": {"labelOrient": "top", "labelAngle": 0, "labelAnchor": "start", "labelFontSize": 13, "labelFontWeight": 600, "labelPadding": 4}
+    }
+  },
+  "spec": {
+    "width": 330,
+    "height": {"step": 13},
+    "mark": {"type": "rect", "stroke": "#ffffff", "strokeWidth": 1},
+    "encoding": {
+      "x": {
+        "field": "state", "type": "nominal", "title": null,
+        "sort": ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT", "EXT"],
+        "axis": {"orient": "top", "labelAngle": 0}
+      },
+      "y": {
+        "field": "type_name", "type": "nominal", "title": null,
+        "sort": {"field": "n", "op": "min"},
+        "axis": {"labelLimit": 250, "labelFontSize": 11}
+      },
+      "color": {
+        "field": "sites", "type": "quantitative",
+        "scale": {"type": "sqrt", "scheme": "tealblues"},
+        "legend": {"title": "Sites", "orient": "right"}
+      },
+      "tooltip": [
+        {"field": "type_name", "type": "nominal", "title": "Wetland type"},
+        {"field": "state", "type": "nominal", "title": "State"},
+        {"field": "sites", "type": "quantitative", "title": "Sites with this type"}
+      ]
+    }
+  },
+  "resolve": {"scale": {"y": "independent"}},
+  "config": {"view": {"stroke": null}, "font": "Instrument Sans"}
+}

@@ -1,0 +1,49 @@
+state,state_name,group,axis_label,axis_order,species,max_scale
+ACT,Australian Capital Territory,Birds,Birds,0,20,100
+ACT,Australian Capital Territory,Mammals,Mammals,1,12,100
+ACT,Australian Capital Territory,Reptiles,Reptiles,2,6,100
+ACT,Australian Capital Territory,Amphibians,Amphibians,3,6,100
+ACT,Australian Capital Territory,Fish,Fish,4,4,100
+ACT,Australian Capital Territory,Invertebrates & other,Invertebrates,5,4,100
+NSW,New South Wales,Birds,Birds,0,81,100
+NSW,New South Wales,Mammals,Mammals,1,43,100
+NSW,New South Wales,Reptiles,Reptiles,2,37,100
+NSW,New South Wales,Amphibians,Amphibians,3,29,100
+NSW,New South Wales,Fish,Fish,4,30,100
+NSW,New South Wales,Invertebrates & other,Invertebrates,5,43,100
+NT,Northern Territory,Birds,Birds,0,38,100
+NT,Northern Territory,Mammals,Mammals,1,33,100
+NT,Northern Territory,Reptiles,Reptiles,2,20,100
+NT,Northern Territory,Amphibians,Amphibians,3,1,100
+NT,Northern Territory,Fish,Fish,4,8,100
+NT,Northern Territory,Invertebrates & other,Invertebrates,5,4,100
+QLD,Queensland,Birds,Birds,0,72,100
+QLD,Queensland,Mammals,Mammals,1,49,100
+QLD,Queensland,Reptiles,Reptiles,2,46,100
+QLD,Queensland,Amphibians,Amphibians,3,23,100
+QLD,Queensland,Fish,Fish,4,29,100
+QLD,Queensland,Invertebrates & other,Invertebrates,5,26,100
+SA,South Australia,Birds,Birds,0,85,100
+SA,South Australia,Mammals,Mammals,1,40,100
+SA,South Australia,Reptiles,Reptiles,2,12,100
+SA,South Australia,Amphibians,Amphibians,3,1,100
+SA,South Australia,Fish,Fish,4,23,100
+SA,South Australia,Invertebrates & other,Invertebrates,5,4,100
+TAS,Tasmania,Birds,Birds,0,57,100
+TAS,Tasmania,Mammals,Mammals,1,11,100
+TAS,Tasmania,Reptiles,Reptiles,2,8,100
+TAS,Tasmania,Amphibians,Amphibians,3,1,100
+TAS,Tasmania,Fish,Fish,4,22,100
+TAS,Tasmania,Invertebrates & other,Invertebrates,5,18,100
+VIC,Victoria,Birds,Birds,0,71,100
+VIC,Victoria,Mammals,Mammals,1,28,100
+VIC,Victoria,Reptiles,Reptiles,2,15,100
+VIC,Victoria,Amphibians,Amphibians,3,11,100
+VIC,Victoria,Fish,Fish,4,34,100
+VIC,Victoria,Invertebrates & other,Invertebrates,5,13,100
+WA,Western Australia,Birds,Birds,0,64,100
+WA,Western Australia,Mammals,Mammals,1,48,100
+WA,Western Australia,Reptiles,Reptiles,2,22,100
+WA,Western Australia,Amphibians,Amphibians,3,3,100
+WA,Western Australia,Fish,Fish,4,20,100
+WA,Western Australia,Invertebrates & other,Invertebrates,5,17,100

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Ramsar-listed area added over time, by state",
+    "subtitle": "Source: DCCEEW Ramsar Wetlands of Australia. Each chart has its own vertical scale.",
+    "anchor": "start", "font": "Young Serif", "fontSize": 16, "fontWeight": 400, "subtitleFontSize": 12
+  },
+  "data": {"url": "data/ramsar_cumulative_by_state.csv"},
+  "transform": [
+    {"calculate": "({'NSW':'New South Wales','VIC':'Victoria','QLD':'Queensland','SA':'South Australia','WA':'Western Australia','TAS':'Tasmania','NT':'Northern Territory','ACT':'Australian Capital Territory','EXT':'External territories'})[datum.state]", "as": "name"}
+  ],
+  "facet": {
+    "field": "name", "type": "nominal", "columns": 3, "title": null,
+    "sort": ["New South Wales", "Victoria", "Western Australia", "Tasmania", "South Australia", "Queensland", "Northern Territory", "Australian Capital Territory", "External territories"],
+    "header": {"labelFontSize": 12, "labelFontWeight": 600, "labelAnchor": "start", "labelOrient": "top", "labelPadding": 2}
+  },
+  "spec": {
+    "width": 170,
+    "height": 100,
+    "encoding": {
+      "x": {"field": "year", "type": "quantitative", "title": null, "scale": {"domain": [1974, 2025]}, "axis": {"format": "d", "values": [1980, 2000, 2020]}},
+      "y": {"field": "cumulative_gazetted_ha", "type": "quantitative", "title": null, "axis": {"format": "~s", "tickCount": 3}},
+      "tooltip": [
+        {"field": "name", "type": "nominal", "title": "State"},
+        {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+        {"field": "cumulative_sites", "type": "quantitative", "title": "Sites listed so far"},
+        {"field": "cumulative_gazetted_ha", "type": "quantitative", "title": "Area listed so far (ha)", "format": ","}
+      ]
+    },
+    "layer": [
+      {"mark": {"type": "area", "interpolate": "step-after", "color": "#2f6f5e", "opacity": 0.25}},
+      {"mark": {"type": "line", "interpolate": "step-after", "color": "#2f6f5e", "strokeWidth": 2}}
+    ]
+  },
+  "resolve": {"scale": {"y": "independent"}},
+  "config": {"view": {"stroke": null}, "font": "Instrument Sans"}
+}

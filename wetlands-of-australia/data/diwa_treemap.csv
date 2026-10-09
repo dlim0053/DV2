@@ -1,0 +1,44 @@
+id,parent,name,category,size,total,pct
+all,,All,,0,2745,100.0
+Coastal and marine,all,Coastal and marine,Coastal and marine,0,1087,39.6
+Inland,all,Inland,Inland,0,1568,57.1
+Human-made,all,Human-made,Human-made,0,90,3.3
+A1,Coastal and marine,Shallow marine waters,Coastal and marine,79,79,2.9
+A2,Coastal and marine,"Subtidal aquatic beds (seagrass, kelp)",Coastal and marine,93,93,3.4
+A3,Coastal and marine,Coral reefs,Coastal and marine,19,19,0.7
+A4,Coastal and marine,Rocky marine shores,Coastal and marine,45,45,1.6
+A5,Coastal and marine,Sand and shingle beaches,Coastal and marine,100,100,3.6
+A6,Coastal and marine,Estuarine waters,Coastal and marine,129,129,4.7
+A7,Coastal and marine,"Intertidal mud, sand and salt flats",Coastal and marine,136,136,5.0
+A8,Coastal and marine,Intertidal marshes,Coastal and marine,138,138,5.0
+A9,Coastal and marine,Mangroves and tidal forests,Coastal and marine,132,132,4.8
+A10,Coastal and marine,Brackish and saline lagoons,Coastal and marine,81,81,3.0
+A11,Coastal and marine,Coastal freshwater lagoons and marshes,Coastal and marine,96,96,3.5
+A12,Coastal and marine,Non-tidal freshwater forested wetlands,Coastal and marine,39,39,1.4
+B1,Inland,Permanent rivers and streams,Inland,141,141,5.1
+B2,Inland,Seasonal rivers and streams,Inland,135,135,4.9
+B3,Inland,Inland deltas,Inland,4,4,0.1
+B4,Inland,Riverine floodplains,Inland,135,135,4.9
+B5,Inland,Permanent freshwater lakes,Inland,108,108,3.9
+B6,Inland,Seasonal freshwater lakes,Inland,162,162,5.9
+B7,Inland,Permanent saline lakes,Inland,71,71,2.6
+B8,Inland,Seasonal saline lakes,Inland,79,79,2.9
+B9,Inland,Permanent freshwater ponds and marshes,Inland,95,95,3.5
+B10,Inland,Seasonal freshwater ponds and marshes,Inland,180,180,6.6
+B11,Inland,Permanent saline marshes,Inland,12,12,0.4
+B12,Inland,Seasonal saline marshes,Inland,47,47,1.7
+B13,Inland,Shrub swamps,Inland,119,119,4.3
+B14,Inland,Freshwater swamp forest,Inland,155,155,5.6
+B15,Inland,Peatlands,Inland,79,79,2.9
+B16,Inland,Alpine wetlands,Inland,3,3,0.1
+B17,Inland,"Springs, oases and rock pools",Inland,33,33,1.2
+B18,Inland,Geothermal wetlands,Inland,1,1,0.0
+B19,Inland,Inland karst wetlands,Inland,9,9,0.3
+C1,Human-made,"Water storage areas (reservoirs, dams)",Human-made,38,38,1.4
+C4,Human-made,Salt pans and salines,Human-made,14,14,0.5
+C5,Human-made,Excavations and mining pools,Human-made,3,3,0.1
+C6,Human-made,Wastewater treatment,Human-made,8,8,0.3
+C7,Human-made,Irrigated land and channels,Human-made,5,5,0.2
+C8,Human-made,Seasonally flooded farmland,Human-made,4,4,0.1
+C9,Human-made,Canals,Human-made,3,3,0.1
+C2-C3,Human-made,Farm ponds and aquaculture ponds,Human-made,15,15,0.5

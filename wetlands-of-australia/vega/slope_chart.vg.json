@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Ramsar-listed area by state, 1990 and 2025",
+    "subtitle": "Source: DCCEEW Ramsar Wetlands of Australia. Each site's current gazetted area is counted from the year it was listed.",
+    "anchor": "start", "font": "Young Serif", "fontSize": 16, "fontWeight": 400, "subtitleFontSize": 12
+  },
+  "data": {"url": "data/ramsar_slope_1990_2025.csv"},
+  "transform": [
+    {"fold": ["ha_1990", "ha_2025"], "as": ["when", "ha"]},
+    {"calculate": "datum.when == 'ha_1990' ? '1990' : '2025'", "as": "year"},
+    {"calculate": "({'NSW':'New South Wales','VIC':'Victoria','QLD':'Queensland','SA':'South Australia','WA':'Western Australia','TAS':'Tasmania','NT':'Northern Territory','ACT':'Australian Capital Territory','EXT':'External territories'})[datum.state]", "as": "name"}
+  ],
+  "width": 300,
+  "height": 380,
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "title": null, "scale": {"type": "point", "padding": 0.4}, "axis": {"labelAngle": 0, "labelFontSize": 13}},
+    "y": {"field": "ha", "type": "quantitative", "title": "Listed area (hectares)", "scale": {"type": "sqrt"}, "axis": {"format": "~s"}},
+    "color": {"field": "name", "type": "nominal", "title": "State", "scale": {"scheme": "tableau10"}}
+  },
+  "layer": [
+    {"mark": {"type": "line", "strokeWidth": 2.5}, "encoding": {"detail": {"field": "state", "type": "nominal"}}},
+    {
+      "mark": {"type": "point", "filled": true, "size": 70, "opacity": 1},
+      "encoding": {"tooltip": [
+        {"field": "name", "type": "nominal", "title": "State"},
+        {"field": "year", "type": "nominal", "title": "Year"},
+        {"field": "ha", "type": "quantitative", "title": "Listed area (ha)", "format": ","}
+      ]}
+    }
+  ],
+  "config": {"view": {"stroke": null}, "font": "Instrument Sans"}
+}
