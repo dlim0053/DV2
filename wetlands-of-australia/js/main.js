@@ -5,7 +5,7 @@ const figures = {
   flow: "vega/flow_map.vg.json",
   heatmap: "vega/heatmap.vg.json",
   slope: "vega/slope_chart.vg.json",
-  multiples: "vega/small_multiples.vg.json",
+  multiples: "vega/small_multiples.vg.json", 
   pictogram: "vega/pictogram.vg.json",
   bars: "vega/grouped_bar.vg.json",
   radar: "vega/radar.vg.json",

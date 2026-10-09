@@ -8,12 +8,13 @@
   "data": {"url": "data/threatened_radar.csv"},
   "transform": [{"calculate": "datum.axis_order * 2 * PI / 6", "as": "a"}],
   "facet": {
-    "field": "state_name", "type": "nominal", "columns": 3, "title": null,
+    "field": "state_name", "type": "nominal", "title": null,
     "sort": ["New South Wales", "Queensland", "Western Australia", "Victoria", "South Australia", "Tasmania", "Northern Territory", "Australian Capital Territory"],
     "header": {"labelFontSize": 11, "labelFontWeight": 600, "labelAnchor": "start", "labelOrient": "top", "labelPadding": 2, "labelLimit": 160}
   },
   "align": "all",
   "center": true,
+  "columns": 3,
   "spacing": {"row": 22, "column": 24},
   "spec": {
     "width": 180,
