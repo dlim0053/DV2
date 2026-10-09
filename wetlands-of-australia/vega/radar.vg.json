@@ -10,11 +10,14 @@
   "facet": {
     "field": "state_name", "type": "nominal", "columns": 3, "title": null,
     "sort": ["New South Wales", "Queensland", "Western Australia", "Victoria", "South Australia", "Tasmania", "Northern Territory", "Australian Capital Territory"],
-    "header": {"labelFontSize": 12, "labelFontWeight": 600, "labelAnchor": "start", "labelOrient": "top", "labelPadding": 2}
+    "header": {"labelFontSize": 11, "labelFontWeight": 600, "labelAnchor": "start", "labelOrient": "top", "labelPadding": 2, "labelLimit": 160}
   },
+  "align": "all",
+  "center": true,
+  "spacing": {"row": 22, "column": 24},
   "spec": {
-    "width": 210,
-    "height": 210,
+    "width": 180,
+    "height": 180,
     "layer": [
       {
         "transform": [
@@ -60,7 +63,7 @@
           {"calculate": "datum.species / datum.max_scale * sin(datum.a)", "as": "px"},
           {"calculate": "datum.species / datum.max_scale * cos(datum.a)", "as": "py"}
         ],
-        "mark": {"type": "circle", "size": 40, "fill": "#2f6f5e", "stroke": "#ffffff", "strokeWidth": 1, "opacity": 1},
+        "mark": {"type": "circle", "size": 32, "fill": "#2f6f5e", "stroke": "#ffffff", "strokeWidth": 1, "opacity": 1},
         "encoding": {
           "x": {"field": "px", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
           "y": {"field": "py", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
@@ -75,7 +78,7 @@
         "transform": [
           {"calculate": "1.28 * sin(datum.a)", "as": "px"}, {"calculate": "1.28 * cos(datum.a)", "as": "py"}
         ],
-        "mark": {"type": "text", "fontSize": 10, "color": "#10303a"},
+        "mark": {"type": "text", "fontSize": 9, "color": "#10303a"},
         "encoding": {
           "x": {"field": "px", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
           "y": {"field": "py", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
@@ -87,11 +90,12 @@
           {"filter": "datum.axis_order == 0"},
           {"calculate": "[0.25, 0.5, 0.75, 1]", "as": "level"},
           {"flatten": ["level"]},
-          {"calculate": "datum.level * datum.max_scale", "as": "ring_value"}
+          {"calculate": "datum.level * datum.max_scale", "as": "ring_value"},
+          {"calculate": "0", "as": "zero"}
         ],
         "mark": {"type": "text", "fontSize": 8, "color": "#5a7479", "align": "left", "dx": 3, "dy": 6},
         "encoding": {
-          "x": {"value": 105},
+          "x": {"field": "zero", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
           "y": {"field": "level", "type": "quantitative", "axis": null, "scale": {"domain": [-1.6, 1.6]}},
           "text": {"field": "ring_value", "type": "quantitative"}
         }

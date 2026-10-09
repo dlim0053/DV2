@@ -12,11 +12,14 @@
   "facet": {
     "field": "name", "type": "nominal", "columns": 3, "title": null,
     "sort": ["New South Wales", "Victoria", "Western Australia", "Tasmania", "South Australia", "Queensland", "Northern Territory", "Australian Capital Territory", "External territories"],
-    "header": {"labelFontSize": 12, "labelFontWeight": 600, "labelAnchor": "start", "labelOrient": "top", "labelPadding": 2}
+    "header": {"labelFontSize": 11, "labelFontWeight": 600, "labelAnchor": "start", "labelOrient": "top", "labelPadding": 2, "labelLimit": 150}
   },
+  "align": "all",
+  "center": true,
+  "spacing": {"row": 22, "column": 14},
   "spec": {
-    "width": 170,
-    "height": 100,
+    "width": 180,
+    "height": 110,
     "encoding": {
       "x": {"field": "year", "type": "quantitative", "title": null, "scale": {"domain": [1974, 2025]}, "axis": {"format": "d", "values": [1980, 2000, 2020]}},
       "y": {"field": "cumulative_gazetted_ha", "type": "quantitative", "title": null, "axis": {"format": "~s", "tickCount": 3}},
