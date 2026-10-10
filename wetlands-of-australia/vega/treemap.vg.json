@@ -20,11 +20,11 @@
       "value": null,
       "on": [
         {
-          "events": "@leaves:mouseover",
+          "events": "@leafMarks:mouseover",
           "update": "datum"
         },
         {
-          "events": "@leaves:mouseout",
+          "events": "@leafMarks:mouseout",
           "update": "null"
         }
       ]
@@ -148,7 +148,7 @@
     },
     {
       "type": "rect",
-      "name": "leaves",
+      "name": "leafMarks",
       "from": {
         "data": "leaves"
       },

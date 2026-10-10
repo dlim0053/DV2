@@ -32,7 +32,7 @@
       "color": {
         "field": "sites", "type": "quantitative",
         "scale": {"type": "sqrt", "scheme": "tealblues"},
-        "legend": {"title": "Sites", "orient": "right"}
+        "legend": {"title": "Sites", "orient": "right", "gradientLength": 160}
       },
       "tooltip": [
         {"field": "type_name", "type": "nominal", "title": "Wetland type"},
