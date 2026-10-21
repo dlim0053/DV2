@@ -22,108 +22,283 @@
       "as": "state_name"
     }
   ],
-  "facet": {
-    "row": {
-      "field": "category",
-      "type": "nominal",
-      "title": null,
-      "sort": [
-        "Coastal and marine",
-        "Inland",
-        "Human-made"
+  "vconcat": [
+    {
+      "title": {
+        "text": "Coastal and marine",
+        "anchor": "start",
+        "fontSize": 13,
+        "fontWeight": 600,
+        "offset": 4
+      },
+      "width": 330,
+      "height": {
+        "step": 13
+      },
+      "transform": [
+        {
+          "filter": "datum.category == 'Coastal and marine'"
+        }
       ],
-      "header": {
-        "labelOrient": "top",
-        "labelAngle": 0,
-        "labelAnchor": "start",
-        "labelFontSize": 13,
-        "labelFontWeight": 600,
-        "labelPadding": 4
-      }
-    }
-  },
-  "spec": {
-    "width": 330,
-    "height": {
-      "step": 13
-    },
-    "mark": {
-      "type": "rect",
-      "stroke": "#ffffff",
-      "strokeWidth": 1
-    },
-    "encoding": {
-      "x": {
-        "field": "state_name",
-        "type": "nominal",
-        "title": null,
-        "sort": [
-          "New South Wales",
-          "Victoria",
-          "Queensland",
-          "South Australia",
-          "Western Australia",
-          "Tasmania",
-          "Northern Territory",
-          "Australian Capital Territory",
-          "External territories"
-        ],
-        "axis": {
-          "orient": "top",
-          "labelAngle": -45,
-          "labelAlign": "left",
-          "labelBaseline": "middle",
-          "labelLimit": 220,
-          "labelFontSize": 11
-        }
+      "mark": {
+        "type": "rect",
+        "stroke": "#ffffff",
+        "strokeWidth": 1
       },
-      "y": {
-        "field": "type_name",
-        "type": "nominal",
-        "title": null,
-        "sort": {
-          "field": "n",
-          "op": "min"
-        },
-        "axis": {
-          "labelLimit": 250,
-          "labelFontSize": 11
-        }
-      },
-      "color": {
-        "field": "sites",
-        "type": "quantitative",
-        "scale": {
-          "type": "sqrt",
-          "scheme": "tealblues"
-        },
-        "legend": {
-          "title": "Sites",
-          "orient": "right"
-        }
-      },
-      "tooltip": [
-        {
-          "field": "type_name",
-          "type": "nominal",
-          "title": "Wetland type"
-        },
-        {
+      "encoding": {
+        "x": {
           "field": "state_name",
           "type": "nominal",
-          "title": "State"
+          "title": null,
+          "sort": [
+            "New South Wales",
+            "Victoria",
+            "Queensland",
+            "South Australia",
+            "Western Australia",
+            "Tasmania",
+            "Northern Territory",
+            "Australian Capital Territory",
+            "External territories"
+          ],
+          "axis": {
+            "orient": "top",
+            "labelAngle": -45,
+            "labelAlign": "left",
+            "labelBaseline": "middle",
+            "labelLimit": 220,
+            "labelFontSize": 11
+          }
         },
-        {
+        "y": {
+          "field": "type_name",
+          "type": "nominal",
+          "title": null,
+          "sort": {
+            "field": "n",
+            "op": "min"
+          },
+          "axis": {
+            "labelLimit": 250,
+            "labelFontSize": 11
+          }
+        },
+        "color": {
           "field": "sites",
           "type": "quantitative",
-          "title": "Sites with this type"
+          "scale": {
+            "type": "sqrt",
+            "scheme": "tealblues",
+            "domain": [
+              0,
+              70
+            ]
+          },
+          "legend": {
+            "title": "Sites",
+            "orient": "right"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "type_name",
+            "type": "nominal",
+            "title": "Wetland type"
+          },
+          {
+            "field": "state_name",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "sites",
+            "type": "quantitative",
+            "title": "Sites with this type"
+          }
+        ]
+      }
+    },
+    {
+      "title": {
+        "text": "Inland",
+        "anchor": "start",
+        "fontSize": 13,
+        "fontWeight": 600,
+        "offset": 4
+      },
+      "width": 330,
+      "height": {
+        "step": 13
+      },
+      "transform": [
+        {
+          "filter": "datum.category == 'Inland'"
         }
-      ]
+      ],
+      "mark": {
+        "type": "rect",
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "state_name",
+          "type": "nominal",
+          "title": null,
+          "sort": [
+            "New South Wales",
+            "Victoria",
+            "Queensland",
+            "South Australia",
+            "Western Australia",
+            "Tasmania",
+            "Northern Territory",
+            "Australian Capital Territory",
+            "External territories"
+          ],
+          "axis": null
+        },
+        "y": {
+          "field": "type_name",
+          "type": "nominal",
+          "title": null,
+          "sort": {
+            "field": "n",
+            "op": "min"
+          },
+          "axis": {
+            "labelLimit": 250,
+            "labelFontSize": 11
+          }
+        },
+        "color": {
+          "field": "sites",
+          "type": "quantitative",
+          "scale": {
+            "type": "sqrt",
+            "scheme": "tealblues",
+            "domain": [
+              0,
+              70
+            ]
+          },
+          "legend": {
+            "title": "Sites",
+            "orient": "right"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "type_name",
+            "type": "nominal",
+            "title": "Wetland type"
+          },
+          {
+            "field": "state_name",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "sites",
+            "type": "quantitative",
+            "title": "Sites with this type"
+          }
+        ]
+      }
+    },
+    {
+      "title": {
+        "text": "Human-made",
+        "anchor": "start",
+        "fontSize": 13,
+        "fontWeight": 600,
+        "offset": 4
+      },
+      "width": 330,
+      "height": {
+        "step": 13
+      },
+      "transform": [
+        {
+          "filter": "datum.category == 'Human-made'"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "state_name",
+          "type": "nominal",
+          "title": null,
+          "sort": [
+            "New South Wales",
+            "Victoria",
+            "Queensland",
+            "South Australia",
+            "Western Australia",
+            "Tasmania",
+            "Northern Territory",
+            "Australian Capital Territory",
+            "External territories"
+          ],
+          "axis": null
+        },
+        "y": {
+          "field": "type_name",
+          "type": "nominal",
+          "title": null,
+          "sort": {
+            "field": "n",
+            "op": "min"
+          },
+          "axis": {
+            "labelLimit": 250,
+            "labelFontSize": 11
+          }
+        },
+        "color": {
+          "field": "sites",
+          "type": "quantitative",
+          "scale": {
+            "type": "sqrt",
+            "scheme": "tealblues",
+            "domain": [
+              0,
+              70
+            ]
+          },
+          "legend": {
+            "title": "Sites",
+            "orient": "right"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "type_name",
+            "type": "nominal",
+            "title": "Wetland type"
+          },
+          {
+            "field": "state_name",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "sites",
+            "type": "quantitative",
+            "title": "Sites with this type"
+          }
+        ]
+      }
     }
-  },
+  ],
+  "spacing": 18,
   "resolve": {
     "scale": {
-      "y": "independent"
+      "color": "shared"
     }
   },
   "config": {
