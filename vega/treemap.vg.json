@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "Treemap of DIWA wetland types: kind of wetland, then type.",
   "width": 700,
-  "height": 460,
+  "height": 520,
   "padding": 5,
   "title": {
     "text": "Wetland types listed in the Directory of Important Wetlands",
@@ -20,11 +20,11 @@
       "value": null,
       "on": [
         {
-          "events": "@leafMarks:mouseover",
+          "events": "@leafRects:mouseover",
           "update": "datum"
         },
         {
-          "events": "@leafMarks:mouseout",
+          "events": "@leafRects:mouseout",
           "update": "null"
         }
       ]
@@ -93,8 +93,68 @@
       "source": "leaves",
       "transform": [
         {
+          "type": "formula",
+          "expr": "max(floor((datum.x1 - datum.x0 - 10) / 5.6), 1)",
+          "as": "mc"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.name",
+          "as": "rs0"
+        },
+        {
+          "type": "formula",
+          "expr": "length(datum.rs0) <= datum.mc ? datum.rs0 : (lastindexof(substring(datum.rs0, 0, datum.mc + 1), ' ') > 0 ? substring(datum.rs0, 0, lastindexof(substring(datum.rs0, 0, datum.mc + 1), ' ')) : substring(datum.rs0, 0, datum.mc))",
+          "as": "ln1"
+        },
+        {
+          "type": "formula",
+          "expr": "trim(substring(datum.rs0, length(datum.ln1)))",
+          "as": "rs1"
+        },
+        {
+          "type": "formula",
+          "expr": "length(datum.rs1) <= datum.mc ? datum.rs1 : (lastindexof(substring(datum.rs1, 0, datum.mc + 1), ' ') > 0 ? substring(datum.rs1, 0, lastindexof(substring(datum.rs1, 0, datum.mc + 1), ' ')) : substring(datum.rs1, 0, datum.mc))",
+          "as": "ln2"
+        },
+        {
+          "type": "formula",
+          "expr": "trim(substring(datum.rs1, length(datum.ln2)))",
+          "as": "rs2"
+        },
+        {
+          "type": "formula",
+          "expr": "length(datum.rs2) <= datum.mc ? datum.rs2 : (lastindexof(substring(datum.rs2, 0, datum.mc + 1), ' ') > 0 ? substring(datum.rs2, 0, lastindexof(substring(datum.rs2, 0, datum.mc + 1), ' ')) : substring(datum.rs2, 0, datum.mc))",
+          "as": "ln3"
+        },
+        {
+          "type": "formula",
+          "expr": "trim(substring(datum.rs2, length(datum.ln3)))",
+          "as": "rs3"
+        },
+        {
+          "type": "formula",
+          "expr": "length(datum.rs3) <= datum.mc ? datum.rs3 : (lastindexof(substring(datum.rs3, 0, datum.mc + 1), ' ') > 0 ? substring(datum.rs3, 0, lastindexof(substring(datum.rs3, 0, datum.mc + 1), ' ')) : substring(datum.rs3, 0, datum.mc))",
+          "as": "ln4"
+        },
+        {
+          "type": "formula",
+          "expr": "trim(substring(datum.rs3, length(datum.ln4)))",
+          "as": "rs4"
+        },
+        {
+          "type": "formula",
+          "expr": "(length(datum.ln1) > 0 ? 1 : 0) + (length(datum.ln2) > 0 ? 1 : 0) + (length(datum.ln3) > 0 ? 1 : 0) + (length(datum.ln4) > 0 ? 1 : 0)",
+          "as": "nl"
+        },
+        {
+          "type": "formula",
+          "expr": "slice([datum.ln1, datum.ln2, datum.ln3, datum.ln4], 0, datum.nl)",
+          "as": "lines"
+        },
+        {
           "type": "filter",
-          "expr": "(datum.x1 - datum.x0) > 64 && (datum.y1 - datum.y0) > 26"
+          "expr": "datum.rs4 == '' && datum.mc >= 6 && datum.nl * 12 + 8 <= (datum.y1 - datum.y0)"
         }
       ]
     }
@@ -148,7 +208,7 @@
     },
     {
       "type": "rect",
-      "name": "leafMarks",
+      "name": "leafRects",
       "from": {
         "data": "leaves"
       },
@@ -220,10 +280,7 @@
             "signal": "datum.y0 + 5"
           },
           "text": {
-            "field": "name"
-          },
-          "limit": {
-            "signal": "datum.x1 - datum.x0 - 10"
+            "field": "lines"
           },
           "baseline": {
             "value": "top"
@@ -236,6 +293,9 @@
           },
           "fill": {
             "value": "#ffffff"
+          },
+          "lineHeight": {
+            "value": 12
           }
         }
       }

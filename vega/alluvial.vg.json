@@ -6,7 +6,7 @@
   "padding": 5,
   "title": {
     "text": "Ramsar sites by state, decade listed and size",
-    "subtitle": "Source: DCCEEW Ramsar Wetlands of Australia. Ribbon width is the number of sites. Hover a block to follow its ribbons.",
+    "subtitle": "Source: DCCEEW Ramsar Wetlands of Australia. Ribbon width is the number of sites. Area is gazetted area.",
     "anchor": "start",
     "font": "Young Serif",
     "fontSize": 16,
@@ -125,15 +125,15 @@
         "EXT"
       ],
       "range": [
-        "#8fb8d8",
-        "#f2b66d",
-        "#e98b8c",
-        "#9ed3cd",
-        "#97c68a",
-        "#efd86f",
-        "#c9a8d8",
-        "#f5b6c0",
-        "#c2a58f"
+        "#0072B2",
+        "#E69F00",
+        "#56B4E9",
+        "#CC79A7",
+        "#F0E442",
+        "#999999",
+        "#332288",
+        "#8C510A",
+        "#D9D9D9"
       ]
     }
   ],
@@ -147,7 +147,7 @@
       "encode": {
         "enter": {
           "tooltip": {
-            "signal": "{'title': datum.src_name + ' to ' + datum.tgt_name, 'Ramsar sites': datum.sites}"
+            "signal": "{'title': replace(datum.src_name, regexp('^ACT$'), 'Australian Capital Territory') + ' to ' + replace(datum.tgt_name, regexp('^ACT$'), 'Australian Capital Territory'), 'Ramsar sites': datum.sites}"
           },
           "fill": {
             "value": null
@@ -194,7 +194,7 @@
       "encode": {
         "enter": {
           "tooltip": {
-            "signal": "{'title': datum.name, 'Ramsar sites': datum.sites}"
+            "signal": "{'title': replace(datum.name, regexp('^ACT$'), 'Australian Capital Territory'), 'Ramsar sites': datum.sites}"
           }
         },
         "update": {
@@ -253,10 +253,10 @@
             "signal": "datum.x - 6"
           },
           "y": {
-            "signal": "(datum.y0 + datum.y1) / 2"
+            "signal": "(datum.y0 + datum.y1) / 2 + (datum.state == 'ACT' ? 4 : 0)"
           },
           "text": {
-            "field": "label"
+            "signal": "datum.state == 'ACT' ? ['Australian Capital', 'Territory'] : datum.label"
           },
           "align": {
             "value": "right"
@@ -272,6 +272,9 @@
           },
           "fill": {
             "value": "#10303a"
+          },
+          "lineHeight": {
+            "value": 11
           }
         }
       }

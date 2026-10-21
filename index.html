@@ -26,7 +26,7 @@
     </div>
     <figure>
       <div id="choropleth" class="vis"></div>
-      <figcaption><b>Why a choropleth?</b> Colour gives one number per state at a glance. The ACT is too small to label on the map. The figures cover all protected land, not wetlands alone.</figcaption>
+      <figcaption>Figures cover all protected land, not just wetlands.</figcaption>
     </figure>
   </section>
 
@@ -41,15 +41,15 @@
     <div class="figs">
     <figure>
       <div id="treemap" class="vis"></div>
-      <figcaption><b>Why a treemap?</b> With 40 types, a bar chart would be long. Boxes pack every type into one space, and grouping them by colour shows which kind of wetland dominates. Two human-made types are pooled because the source is inconsistent about which code is which.</figcaption>
+      <figcaption>Larger boxes are more common; hover small boxes for names.</figcaption>
     </figure>
     <figure>
       <div id="sunburst" class="vis"></div>
-      <figcaption><b>Why a sunburst?</b> It shows a hierarchy and shares at once: how the total splits by state, then by kind of wetland, then by type. A wetland with several types is counted once for each, so slices show make-up, not numbers of wetlands. The next chart answers a different question: which specific types each state has.</figcaption>
+      <figcaption>Sites with several types are counted once per type.</figcaption>
     </figure>
     <figure>
       <div id="heatmap" class="vis"></div>
-      <figcaption><b>Why a matrix heatmap?</b> It compares two things at once, state and wetland type, without 360 separate bars. A site with several types is counted once for each, so columns do not add up to the number of sites. The Directory was last published in 2001, so the counts are old but are still the latest national list. NSW is New South Wales, VIC Victoria, QLD Queensland, SA South Australia, WA Western Australia, TAS Tasmania, NT Northern Territory, ACT Australian Capital Territory and EXT external territories.</figcaption>
+      <figcaption>Darker squares mean more sites. The Directory dates from 2001.</figcaption>
     </figure>
     </div>
   </section>
@@ -62,7 +62,7 @@
     </div>
     <figure>
       <div id="symbols" class="vis"></div>
-      <figcaption><b>Why proportional symbols?</b> Area is the key difference between sites, and circle size shows it without hiding where each site is. Six sites on external territories, such as Christmas Island and Ashmore Reef, are not shown.</figcaption>
+      <figcaption>Six external-territory sites are not shown on this map.</figcaption>
     </figure>
   </section>
 
@@ -76,11 +76,11 @@
     <div class="figs">
     <figure>
       <div id="flow" class="vis"></div>
-      <figcaption><b>Why a flow map?</b> A line from origin to destination is the clearest way to show a connection between places. Hover over a point to see the site name.</figcaption>
+      <figcaption>Lines show network links, not tracked bird journeys.</figcaption>
     </figure>
     <figure>
       <div id="pictogram" class="vis"></div>
-      <figcaption><b>Why a pictogram?</b> Counting icons needs no statistics: red, orange and gold birds are the 15 species at risk. Statuses follow the August 2026 list and can change, so check a species' official profile before quoting it.</figcaption>
+      <figcaption>Each bird is one species; statuses from August 2026.</figcaption>
     </figure>
     </div>
   </section>
@@ -89,16 +89,16 @@
       <h2>Species at risk</h2>
       <p>Australia's threatened species list holds 2,119 species that are not yet extinct. Plants make up 1,487 of them and animals the other 632.</p>
       <p>Among animals, birds are the largest group, with 164 species. Seventy of them are endangered and 18 are critically endangered.</p>
-      <p>South Australia lists 85 threatened birds, more than any other state. New South Wales and Queensland list the most threatened animals overall, 263 and 245. A species listed in several states is counted in each.</p>
+      <p>South Australia lists 85 threatened birds, more than any other state. New South Wales and Queensland list the most threatened animals overall, 263 and 245. A species listed in several states is counted in each. Invertebrates include insects, snails, crabs and spiders.</p>
     </div>
     <div class="figs">
     <figure>
       <div id="bars" class="vis"></div>
-      <figcaption><b>Why a grouped bar chart?</b> Bars side by side are the easiest way to compare counts within and between groups. Plants are left out because 1,487 species would dwarf every other bar, and seven fish listed as conservation dependent are not shown. The list covers all habitats, so these are not only wetland species.</figcaption>
+      <figcaption>Plants are omitted; their 1,487 species would dwarf the bars.</figcaption>
     </figure>
     <figure>
       <div id="radar" class="vis"></div>
-      <figcaption><b>Why a radar chart?</b> Each shape is one state's profile across six animal groups, and the same scale on every chart makes the shapes comparable. Points far from the centre show where a state has many threatened species. Radar charts are poor for exact values, so hover over a point. Invertebrates include insects, snails, crabs and spiders.</figcaption>
+      <figcaption>Same scale on every chart; hover over points for values.</figcaption>
     </figure>
     </div>
   </section>
@@ -112,11 +112,11 @@
     <div class="figs">
       <figure>
         <div id="slope" class="vis"></div>
-        <figcaption><b>Why a slope chart?</b> Two dots per state make before-and-after change easy to see, and a steeper line means more area was added. The vertical axis is stretched so that small totals stay visible.</figcaption>
+        <figcaption>The longer the line, the more area was added.</figcaption>
       </figure>
       <figure>
         <div id="multiples" class="vis"></div>
-        <figcaption><b>Why small multiples?</b> One small chart per state avoids nine overlapping lines. Each chart has its own vertical scale, so compare when sites were listed, not heights. These charts count each site's current area from the year it was listed, so they show when sites were added, not changes in wetland size.</figcaption>
+        <figcaption>Compare the timing of listings, not the heights.</figcaption>
       </figure>
     </div>
   </section>
@@ -128,36 +128,8 @@
     </div>
     <figure>
       <div id="alluvial" class="vis"></div>
-      <figcaption><b>Why an alluvial diagram?</b> It follows each site through three facts at once: where it is, when it was listed and how big it is. Each site is counted once in every column. Hover over a block to dim every ribbon that does not touch it. Area is gazetted area, and external territories include Christmas Island and Ashmore Reef.</figcaption>
+      <figcaption>Hover over a block to dim unrelated ribbons.</figcaption>
     </figure>
-  </section>
-    <section id="conclusion">
-    <div class="text">
-      <h2>What it adds up to</h2>
-      <p>Australia's wetlands are many different places, and protecting them takes more than one tool. The charts above point to the same pattern: protection is real, but uneven and slow to grow.</p>
-      <p>For a reader in Malaysia, the link is the flyway. Migratory shorebirds that stop on Malaysian shores depend on the same Australian wetlands, so what happens to those places matters beyond Australia's borders.</p>
-    </div>
-    <div>
-      <div class="takeaways">
-        <div class="takeaway">
-          <span class="num">40</span>
-          <p>wetland types appear in the Directory of Important Wetlands, from coral reefs and mangroves to inland lakes and farm dams.</p>
-        </div>
-        <div class="takeaway">
-          <span class="num">89%</span>
-          <p>of all Ramsar-listed area sits in just 13 of the 67 sites. Protection is concentrated in a few very large places.</p>
-        </div>
-        <div class="takeaway">
-          <span class="num">3</span>
-          <p>Ramsar sites have been added since 2010. Most of the 67 were listed in the 1980s and 1990s.</p>
-        </div>
-        <div class="takeaway">
-          <span class="num">15 of 37</span>
-          <p>flyway shorebird species are on Australia's threatened species list. The flyway network names one Malaysian site, Bako Buntal Bay in Sarawak.</p>
-        </div>
-      </div>
-      <p class="limits"><b>What the data cannot tell us.</b> The Directory of Important Wetlands was last published in 2001. The Ramsar charts show when sites were listed, not how wetlands have changed in size. The threatened species list covers all habitats, not only wetlands, and the flyway lines show network links, not tracked birds. Together the charts show where protection stands. They do not show whether it is working.</p>
-    </div>
   </section>
 </main>
 <footer>

@@ -3,31 +3,168 @@
   "title": {
     "text": "Ramsar-listed area by state, 1990 and 2025",
     "subtitle": "Source: DCCEEW Ramsar Wetlands of Australia. Each site's current gazetted area is counted from the year it was listed.",
-    "anchor": "start", "font": "Young Serif", "fontSize": 16, "fontWeight": 400, "subtitleFontSize": 12
+    "anchor": "start",
+    "font": "Young Serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "subtitleFontSize": 12
   },
-  "data": {"url": "data/ramsar_slope_1990_2025.csv"},
+  "width": 520,
+  "height": {
+    "step": 32
+  },
+  "data": {
+    "url": "data/ramsar_slope_1990_2025.csv"
+  },
   "transform": [
-    {"fold": ["ha_1990", "ha_2025"], "as": ["when", "ha"]},
-    {"calculate": "datum.when == 'ha_1990' ? '1990' : '2025'", "as": "year"},
-    {"calculate": "({'NSW':'New South Wales','VIC':'Victoria','QLD':'Queensland','SA':'South Australia','WA':'Western Australia','TAS':'Tasmania','NT':'Northern Territory','ACT':'Australian Capital Territory','EXT':'External territories'})[datum.state]", "as": "name"}
-  ],
-  "width": 300,
-  "height": 380,
-  "encoding": {
-    "x": {"field": "year", "type": "ordinal", "title": null, "scale": {"type": "point", "padding": 0.4}, "axis": {"labelAngle": 0, "labelFontSize": 13}},
-    "y": {"field": "ha", "type": "quantitative", "title": "Listed area (hectares)", "scale": {"type": "sqrt"}, "axis": {"format": "~s"}},
-    "color": {"field": "name", "type": "nominal", "title": "State", "scale": {"scheme": "tableau10"}}
-  },
-  "layer": [
-    {"mark": {"type": "line", "strokeWidth": 2.5}, "encoding": {"detail": {"field": "state", "type": "nominal"}}},
     {
-      "mark": {"type": "point", "filled": true, "size": 70, "opacity": 1},
-      "encoding": {"tooltip": [
-        {"field": "name", "type": "nominal", "title": "State"},
-        {"field": "year", "type": "nominal", "title": "Year"},
-        {"field": "ha", "type": "quantitative", "title": "Listed area (ha)", "format": ","}
-      ]}
+      "calculate": "({'NSW':'New South Wales','VIC':'Victoria','QLD':'Queensland','SA':'South Australia','WA':'Western Australia','TAS':'Tasmania','NT':'Northern Territory','ACT':'Australian Capital Territory','EXT':'External territories'})[datum.state]",
+      "as": "name"
     }
   ],
-  "config": {"view": {"stroke": null}, "font": "Instrument Sans"}
+  "encoding": {
+    "y": {
+      "field": "name",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Northern Territory",
+        "South Australia",
+        "External territories",
+        "Queensland",
+        "Western Australia",
+        "New South Wales",
+        "Victoria",
+        "Tasmania",
+        "Australian Capital Territory"
+      ],
+      "axis": {
+        "labelFontSize": 12,
+        "labelLimit": 300,
+        "domain": false,
+        "ticks": false,
+        "offset": 12
+      }
+    },
+    "x": {
+      "type": "quantitative",
+      "title": "Listed area (hectares, stretched scale)",
+      "scale": {
+        "type": "sqrt",
+        "domain": [
+          0,
+          2300000
+        ],
+        "nice": false
+      },
+      "axis": {
+        "labelExpr": "datum.value >= 1000000 ? (datum.value / 1000000) + 'M' : datum.value >= 1000 ? (datum.value / 1000) + 'k' : datum.value",
+        "values": [
+          0,
+          50000,
+          250000,
+          500000,
+          1000000,
+          2000000
+        ]
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 4,
+        "color": "#b8c6c2",
+        "strokeCap": "round"
+      },
+      "encoding": {
+        "x": {
+          "field": "ha_1990",
+          "type": "quantitative"
+        },
+        "x2": {
+          "field": "ha_2025"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "fold": [
+            "ha_1990",
+            "ha_2025"
+          ],
+          "as": [
+            "when",
+            "ha"
+          ]
+        },
+        {
+          "calculate": "datum.when == 'ha_1990' ? '1990' : '2025'",
+          "as": "year"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 130,
+        "opacity": 1,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "x": {
+          "field": "ha",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "year",
+          "type": "nominal",
+          "title": "Year",
+          "scale": {
+            "domain": [
+              "1990",
+              "2025"
+            ],
+            "range": [
+              "#E69F00",
+              "#0072B2"
+            ]
+          },
+          "legend": {
+            "orient": "top",
+            "direction": "horizontal",
+            "symbolSize": 140,
+            "titleOrient": "left",
+            "titleAnchor": "start"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "year",
+            "type": "nominal",
+            "title": "Year"
+          },
+          {
+            "field": "ha",
+            "type": "quantitative",
+            "title": "Listed area (ha)",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Instrument Sans"
+  }
 }
